@@ -6,3 +6,4 @@ class Hello:
         print("Hello From Second Class")
         print("HelloWorld")
         print("hihihihi")
+        print("halooo")
