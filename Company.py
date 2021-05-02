@@ -1,3 +1,7 @@
+def formatted_coordinates(lat, long):
+    return str(lat) + ", " + str(long)
+
+
 class CompanyClass:
 
     def __init__(self, name, address, latitude=-1, longitude=-1):

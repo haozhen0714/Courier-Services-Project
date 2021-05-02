@@ -18,3 +18,8 @@ No.11, Jalan Seri Baiduri 2, Taman Seri Baiduri, 43000 Kajang, Selangor
 2.9745183
 101.8287143
 
+DHL Sungai Buloh
+G-3A,Putra One Residence, Persiaran Bukit Rahman Putra 1, 40160 Sungai Buloh, Selangor
+3.223594
+101.5566248
+
