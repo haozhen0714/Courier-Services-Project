@@ -143,7 +143,6 @@ def read_customer_full_details():
     return customer_object_list
 
 
-initial_time = time.time()
 company_list = read_company_full_details()
 customer_list = read_customer_full_details()
 generate_file_for_customer_with_each_company(customer_list, company_list)  # generate score for problem 1 and save it in file
