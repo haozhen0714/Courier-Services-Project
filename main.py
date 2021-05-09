@@ -149,7 +149,7 @@ def read_customer_full_details():
     customer_file.close()
     return customer_object_list
 
-
+#added by jinghui
 def read_customer_ranking_details(str):
     customer_file = open("Customer " + str + " Problem 1 Ranking.txt", "r")
     customer_delivery_list = customer_file.readlines()
@@ -173,6 +173,7 @@ company_list = read_company_full_details()
 customer_list = read_customer_full_details()
 generate_file_for_customer_with_each_company(customer_list,
                                              company_list)  # generate score for problem 1 and save it in file
+#added by jinghui
 customer1 = read_customer_ranking_details('1')
 customer2 = read_customer_ranking_details('2')
 customer3 = read_customer_ranking_details('3')
