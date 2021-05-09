@@ -5,6 +5,7 @@ import GeocodingAPI
 from Company import CompanyClass
 from Customer import CustomerClass
 from os import path
+import MapForOneCustomer
 
 
 def read_raw_company_file():
@@ -149,7 +150,32 @@ def read_customer_full_details():
     return customer_object_list
 
 
+def read_customer_ranking_details(str):
+    customer_file = open("Customer " + str + " Problem 1 Ranking.txt", "r")
+    customer_delivery_list = customer_file.readlines()
+    for i in range (len(customer_delivery_list)):
+        customer_delivery_list[i] = customer_delivery_list[i].replace('\n', '')
+    details = []
+    ranking = []
+    while len(customer_delivery_list) != 0:
+        for i in range (4):
+            details.append(customer_delivery_list.pop(0))
+        customer_delivery_list.pop(0)
+        ranking.append(details)
+        details = []
+    customer_file.close()
+    return ranking
+
+
+
+
 company_list = read_company_full_details()
 customer_list = read_customer_full_details()
 generate_file_for_customer_with_each_company(customer_list,
                                              company_list)  # generate score for problem 1 and save it in file
+customer1 = read_customer_ranking_details('1')
+customer2 = read_customer_ranking_details('2')
+customer3 = read_customer_ranking_details('3')
+MapForOneCustomer.plotMap(customer1, 1)
+MapForOneCustomer.plotMap(customer2, 2)
+MapForOneCustomer.plotMap(customer3, 3)
