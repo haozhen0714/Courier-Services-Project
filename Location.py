@@ -2,6 +2,7 @@ import gmplot
 API_KEY = 'AIzaSyDKQY-dAMpv32uiWSREDRH83FZRcNUhSmw'
 
 gmapOne=gmplot.GoogleMapPlotter(3.112585695236, 101.6397000538541, 10,API_KEY=API_KEY)
+gmapOne.apikey= 'AIzaSyDKQY-dAMpv32uiWSREDRH83FZRcNUhSmw'
 gmapOne.coloricon = "http://www.googlemapsmarkers.com/v1/%s/"
 gmapOne.marker(3.0319924887507144,101.37344116244806,color='blue',title='Port Klang')
 gmapOne.marker(3.112924170027219,101.63982650389863,color='red',title='Petaling Jaya')
