@@ -11,7 +11,7 @@ Rawang --> GDex Batu Caves --> Bukit Jelutong
 2
 Pos Laju Petaling Jaya
 Rawang --> Pos Laju Petaling Jaya --> Bukit Jelutong
-67.7 km
+68.80000000000001 km
 
 3
 City-Link Express Klang

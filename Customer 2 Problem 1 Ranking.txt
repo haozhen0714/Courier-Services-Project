@@ -11,7 +11,7 @@ Subang Jaya --> DHL Sungai Buloh --> Puncak Alam
 2
 Pos Laju Petaling Jaya
 Subang Jaya --> Pos Laju Petaling Jaya --> Puncak Alam
-55.099999999999994 km
+56.1 km
 
 3
 GDex Batu Caves

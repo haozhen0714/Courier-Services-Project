@@ -1,7 +1,7 @@
 0
 Pos Laju Petaling Jaya
 Ampang --> Pos Laju Petaling Jaya --> Cyberjaya
-55.900000000000006 km
+56.199999999999996 km
 
 1
 J&T Kajang
