@@ -4,9 +4,8 @@ import DistanceMatrixAPI
 import GeocodingAPI
 from Company import CompanyClass
 from Customer import CustomerClass
-from os import path
 import MapForOneCustomer
-
+import CompanyMap
 
 def read_raw_company_file():
     company_file = open("Company_Raw_Name_Address.txt", "r")
@@ -166,17 +165,22 @@ def read_customer_ranking_details(str):
     customer_file.close()
     return ranking
 
-
-
-
+#moy's code
 company_list = read_company_full_details()
 customer_list = read_customer_full_details()
 generate_file_for_customer_with_each_company(customer_list,
                                              company_list)  # generate score for problem 1 and save it in file
+
+#added for naim code
+CompanyMap.draw_company_map()
+
 #added by jinghui
-customer1 = read_customer_ranking_details('1')
-customer2 = read_customer_ranking_details('2')
-customer3 = read_customer_ranking_details('3')
-MapForOneCustomer.plotMap(customer1, 1)
-MapForOneCustomer.plotMap(customer2, 2)
-MapForOneCustomer.plotMap(customer3, 3)
+customers_map = []
+for i in range(1, len(customer_list) + 1):
+    customers_map.append(read_customer_ranking_details(str(i)))
+
+for i in range(len(customers_map)):
+    MapForOneCustomer.plotMap(customers_map[i], i+1)
+
+
+

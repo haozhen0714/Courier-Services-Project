@@ -1,0 +1,25 @@
+0
+Pos Laju Petaling Jaya
+Ampang --> Pos Laju Petaling Jaya --> Cyberjaya
+55.900000000000006 km
+
+1
+J&T Kajang
+Ampang --> J&T Kajang --> Cyberjaya
+60.2 km
+
+2
+GDex Batu Caves
+Ampang --> GDex Batu Caves --> Cyberjaya
+65.5 km
+
+3
+City-Link Express Klang
+Ampang --> City-Link Express Klang --> Cyberjaya
+83.3 km
+
+4
+DHL Sungai Buloh
+Ampang --> DHL Sungai Buloh --> Cyberjaya
+87.1 km
+
