@@ -5,8 +5,8 @@ City-Link Express Klang
 
 Pos Laju Petaling Jaya
 12D & 12E, Jalan Tandang, Seksyen 51 46050, 46100 Petaling Jaya, Selangor
-3.0869529
-101.6301735
+3.0866413
+101.6300888
 
 GDex Batu Caves
 NO 16, Jalan Sbc 8, Taman Sri Batu Caves, 68100 Batu Caves, Selangor
