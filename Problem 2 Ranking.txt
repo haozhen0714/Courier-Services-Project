@@ -1,0 +1,31 @@
+0
+Pos Laju
+Amount of positive word:824
+Amount of negative word:1150
+
+1
+DHL
+Amount of positive word:505
+Amount of negative word:716
+
+2
+GDEX
+Amount of positive word:407
+Amount of negative word:585
+
+3
+J&T
+Amount of positive word:197
+Amount of negative word:313
+
+4
+City-Link Express
+Amount of positive word:132
+Amount of negative word:182
+
+
+
+
+
+
+
