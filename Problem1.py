@@ -73,7 +73,7 @@ def calc_total_distance(customer, company):
         Company.formatted_coordinates(company.latitude, company.longitude),
         Company.formatted_coordinates(customer.des_lat, customer.des_long))
     total_distance = float(distance1.replace(" km", "")) + float(distance2.replace(" km", ""))
-    return (distance1, distance2, total_distance)
+    return distance1, distance2, total_distance
 
 
 def generate_file_for_customer_with_each_company(customer_lists, company_lists):
