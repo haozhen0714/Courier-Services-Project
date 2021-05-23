@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 from requests.api import request
 from os import name
 import plotly
-from plotly.offline import iplot
+from plotly.offline import plot
 import plotly.graph_objs as go
 import pandas as pd
 from plotly import express
@@ -62,7 +62,7 @@ def positive_graph():
         y = total_positive_list
     )]
     fig = go.Figure(data=data)
-    iplot(fig)
+    plot(fig, filename="Positive Graph.html")
 
 def negative_graph():
     #plot graph for negative count of each company
@@ -74,7 +74,7 @@ def negative_graph():
     
     )]
     fig = go.Figure(data=data)
-    iplot(fig)
+    plot(fig, filename="Negative Graph.html")
 
 def rabin_karp(T, P, d, q):
     n = len(T)  # length of text string
