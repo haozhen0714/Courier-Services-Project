@@ -49,7 +49,7 @@ def generate_ranking_file_for_p2(company_list):
         text += "Negative Word Count: " + str(company.negative) + "\n"
         text += "Positive Percentage: " + str("{0:.2f}".format(company.positive_percentage)) + "%\n\n"
         if j != len(company_list) - 1:
-            if company_list[j].positive_percentage != company_list[j + 1].positive_percentage:
+            if company_list[j].positive_percentage != company_list[j + 1].positive_percentage:  # avoid same ranking
                 i += 1
             j += 1
     text += "Conclusion: \n" + conclusion

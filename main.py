@@ -6,6 +6,7 @@ import time
 
 initial_time = time.time()
 
+#P1
 # moy's code
 company_list = p1.read_company_full_details()
 customer_list = p1.read_customer_full_details()
