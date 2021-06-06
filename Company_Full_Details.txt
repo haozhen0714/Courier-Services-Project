@@ -15,8 +15,8 @@ NO 16, Jalan Sbc 8, Taman Sri Batu Caves, 68100 Batu Caves, Selangor
 
 J&T Kajang
 No.11, Jalan Seri Baiduri 2, Taman Seri Baiduri, 43000 Kajang, Selangor
-2.9745183
-101.8287143
+2.9744293
+101.8287136
 
 DHL Sungai Buloh
 G-3A,Putra One Residence, Persiaran Bukit Rahman Putra 1, 40160 Sungai Buloh, Selangor
