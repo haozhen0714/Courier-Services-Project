@@ -89,7 +89,7 @@ def generate_file_for_customer_with_each_company(customer_lists, company_lists):
             customer_file_details_route.write(str(return_distances[1]) + "\n\n")
             total_distance = return_distances[2]
             company_ranking_list.append([company, total_distance])
-        company_ranking_list.sort(key=lambda x: x[1])  # Find new algo
+        company_ranking_list.sort(key=lambda x: x[1])
         count = 0
         for i in range(len(company_ranking_list)):
             customer_file_ranking.write(str(count) + "\n")
@@ -97,7 +97,8 @@ def generate_file_for_customer_with_each_company(customer_lists, company_lists):
             customer_file_ranking.write(
                 str(customer.ori_name) + " --> " + str(company_ranking_list[i][0].name) + " --> " + str(
                     customer.des_name) + "\n")
-            customer_file_ranking.write(str(company_ranking_list[i][1]) + " km" + "\n\n")  # distance
+            customer_file_ranking.write(
+                "Total Distance: " + "{0:.2f}".format(company_ranking_list[i][1]) + " km" + "\n\n")  # distance
             if i != len(company_ranking_list) - 1:
                 if company_ranking_list[i][1] != company_ranking_list[i + 1][1]:
                     count += 1
@@ -165,4 +166,3 @@ def read_customer_ranking_details(c):
         details = []
     customer_file.close()
     return ranking
-

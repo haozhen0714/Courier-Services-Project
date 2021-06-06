@@ -154,9 +154,10 @@ def company_sentiment_analysis(company_list):
             textfile = open("Stop Words Frequency for " + company.name + " URL " + str(i) + ".txt", "w",
                             errors="ignore")
             for element in str(sorteddict):
-                line = str(element).replace(")", "\n")
+                line = str(element).replace(")", ")\n")
                 textfile.writelines(str(line))
             textfile.close()
+            print("Write txt file into: " + "Stop Words Frequency for " + company.name + " URL " + str(i) + ".txt")
 
             plt.bar(x_wordcount[:30], y_wordcount[:30])
             plt.xticks(x_wordcount[:30], rotation='vertical')

@@ -1,25 +1,25 @@
 0
 DHL Sungai Buloh
 Rawang --> DHL Sungai Buloh --> Bukit Jelutong
-57.3 km
+Total Distance: 57.30 km
 
 1
 GDex Batu Caves
 Rawang --> GDex Batu Caves --> Bukit Jelutong
-61.5 km
+Total Distance: 61.50 km
 
 2
 Pos Laju Petaling Jaya
 Rawang --> Pos Laju Petaling Jaya --> Bukit Jelutong
-68.80000000000001 km
+Total Distance: 68.80 km
 
 3
 City-Link Express Klang
 Rawang --> City-Link Express Klang --> Bukit Jelutong
-78.4 km
+Total Distance: 78.40 km
 
 4
 J&T Kajang
 Rawang --> J&T Kajang --> Bukit Jelutong
-124.4 km
+Total Distance: 124.40 km
 
