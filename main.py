@@ -12,7 +12,7 @@ initial_time = time.time()
 print("Executing Problem 1")
 company_list = p1.read_company_full_details()
 customer_list = p1.read_customer_full_details()
-'''
+
 p1.generate_file_for_customer_with_each_company(customer_list,
                                                 company_list)  # generate score for problem 1 and save it in file
 
@@ -34,7 +34,7 @@ p2.add_company_URL(company_list)  # add URL into each company
 p2.company_sentiment_analysis(company_list)
 p2.plot_positive_negative_graph(company_list)
 p2.generate_ranking_file_for_p2(company_list)
-'''
+
 # P3
 print('----------------------------------------------------')
 print("Executing Problem 3")
