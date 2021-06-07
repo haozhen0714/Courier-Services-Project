@@ -36,7 +36,7 @@ def plotMap(customer, num):
         plot_marker.append(dest_long)
         plot_list.append(plot_marker)
         plot_marker = []
-        plotting = MapsPlotting.getRoute(num, origin_lat, origin_long, hub_lat, hub_long, dest_lat, dest_long)
+        plotting = MapsPlotting.getRoute(origin_lat, origin_long, hub_lat, hub_long, dest_lat, dest_long)
         plot_list.append(plotting)
 
     MapsPlotting.plotAllRoutes(plot_list, num)
@@ -50,6 +50,7 @@ def getAllRoute(customer):
 
 
 def read_company_full_details():
+    print("Reading Company_Full_Details.txt")
     company_file = open("Company_Full_Details.txt", "r")
     company_list = company_file.readlines()
     for i in range(len(company_list)):
@@ -59,6 +60,7 @@ def read_company_full_details():
 
 
 def read_customer_origin_destination_including_distance():
+    print("Reading Customer_Origin_Destination_Including_Distance.txt")
     customer_origin_dest_distance_file = open("Customer_Origin_Destination_Including_Distance.txt", "r")
     customer_origin_dest_distance_list = customer_origin_dest_distance_file.readlines()
     for i in range(len(customer_origin_dest_distance_list)):

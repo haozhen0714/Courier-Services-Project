@@ -1,0 +1,59 @@
+Probability Distribution of each Courier Company for Customer 2:
+City-Link Express Klang: 0.3067
+Pos Laju Petaling Jaya: 0.2533
+DHL Sungai Buloh: 0.2133
+GDex Batu Caves: 0.1600
+J&T Kajang: 0.0667
+----------------------------------------------------------------------------------------
+Conclusion for each company. "1" place is the best ranking representation and so on...
+----------------------------------------------------------------------------------------
+Courier Company: City-Link Express Klang
+Overall Ranking: 1 place
+Distance Ranking based on shortest route: 0 place
+Route: Subang Jaya --> City-Link Express Klang --> Puncak Alam
+Total Distance: 45.70 km
+Sentiment Ranking based on percentage of positive words: 1 place
+Positive Word Count: 203
+Negative Word Count: 81
+Positive Percentage: 71.48%
+
+Courier Company: Pos Laju Petaling Jaya
+Overall Ranking: 2 place
+Distance Ranking based on shortest route: 2 place
+Route: Subang Jaya --> Pos Laju Petaling Jaya --> Puncak Alam
+Total Distance: 56.10 km
+Sentiment Ranking based on percentage of positive words: 0 place
+Positive Word Count: 829
+Negative Word Count: 326
+Positive Percentage: 71.77%
+
+Courier Company: DHL Sungai Buloh
+Overall Ranking: 3 place
+Distance Ranking based on shortest route: 1 place
+Route: Subang Jaya --> DHL Sungai Buloh --> Puncak Alam
+Total Distance: 47.70 km
+Sentiment Ranking based on percentage of positive words: 3 place
+Positive Word Count: 516
+Negative Word Count: 223
+Positive Percentage: 69.82%
+
+Courier Company: GDex Batu Caves
+Overall Ranking: 4 place
+Distance Ranking based on shortest route: 3 place
+Route: Subang Jaya --> GDex Batu Caves --> Puncak Alam
+Total Distance: 80.80 km
+Sentiment Ranking based on percentage of positive words: 2 place
+Positive Word Count: 407
+Negative Word Count: 175
+Positive Percentage: 69.93%
+
+Courier Company: J&T Kajang
+Overall Ranking: 5 place
+Distance Ranking based on shortest route: 4 place
+Route: Subang Jaya --> J&T Kajang --> Puncak Alam
+Total Distance: 107.60 km
+Sentiment Ranking based on percentage of positive words: 4 place
+Positive Word Count: 340
+Negative Word Count: 192
+Positive Percentage: 63.91%
+

@@ -22,6 +22,7 @@ def read_company_full_details():
 
 
 def draw_company_map():
+
     gmapOne = gmplot.GoogleMapPlotter(3.112585695236, 101.6397000538541, 10, API_KEY=API_KEY)
     gmapOne.apikey = API_KEY
     gmapOne.coloricon = "http://www.googlemapsmarkers.com/v1/%s/"
@@ -37,3 +38,4 @@ def draw_company_map():
     # gmapOne.scatter(lat,lang,'#ff000',size=100,marker=True)
     # gmapOne.plot(lat,lang,'blue',edge_width=2.5)
     gmapOne.draw("Company Map.html")
+    print("Draw and write Company Map.html")

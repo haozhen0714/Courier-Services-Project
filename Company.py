@@ -27,5 +27,3 @@ class CompanyClass:
                 "\nPositive Word: " + str(self.positive) +
                 "\nNegative Word: " + str(self.negative) +
                 "\nPositive Percentage: " + str(self.positive_percentage))
-
-

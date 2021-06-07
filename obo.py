@@ -52,6 +52,7 @@ def stopword():
 
 
 def StopWordCount(url):
+    print("Executing StopWordCount for URL:", url)
     # file1 = open(readFile, "r", encoding="utf8")
     file1 = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 
@@ -66,7 +67,7 @@ def StopWordCount(url):
             if found:
                 sw.append(i.decode('utf-8'))
 
-    print(sw)
+    print("Stop Word:", sw)
     return sw.__len__()
 
 

@@ -50,8 +50,13 @@ def generate_ranking_file_for_p2(company_list):
         text += "Positive Percentage: " + str("{0:.2f}".format(company.positive_percentage)) + "%\n\n"
         if j != len(company_list) - 1:
             if company_list[j].positive_percentage != company_list[j + 1].positive_percentage:  # avoid same ranking
-                i += 1
-            j += 1
+                j += 1
+                i = j
+            else:
+                j += 1
+        else:
+            i = j
+
     text += "Conclusion: \n" + conclusion
     print(text)
     # write to file
@@ -116,12 +121,13 @@ def rabin_karp(T, P, d=256, q=101):  # time complexity:O(n)
 
 
 def company_sentiment_analysis(company_list):
+    url_count = 1
     for company in company_list:
         i = 1
         for url in company.url_list:  # time complexity:O(n^2)
             r = requests.get(url)
             print("")
-            print("Url of the article: " + url)
+            print("URL", url_count, ": Url of the article: " + url)
             # r = requests.get(url2)
 
             # Extract HTML from Response object and print
@@ -151,26 +157,27 @@ def company_sentiment_analysis(company_list):
                 y_wordcount.append(sorteddict[w][0])
             print(x_wordcount, "\n", y_wordcount)
 
-            textfile = open("Stop Words Frequency for " + company.name + " URL " + str(i) + ".txt", "w",
+            textfile = open("Words Frequency for " + company.name + " URL " + str(i) + ".txt", "w",
                             errors="ignore")
             for element in str(sorteddict):
                 line = str(element).replace(")", ")\n")
                 textfile.writelines(str(line))
             textfile.close()
-            print("Write txt file into: " + "Stop Words Frequency for " + company.name + " URL " + str(i) + ".txt")
+            print("Write txt file into: " + "Words Frequency for " + company.name + " URL " + str(i) + ".txt")
 
             plt.bar(x_wordcount[:30], y_wordcount[:30])
             plt.xticks(x_wordcount[:30], rotation='vertical')
-            plt.title("Top 30 Stop Words for " + company.name + " URL " + str(i))
+            plt.title("Top 30 Words for " + company.name + " URL " + str(i))
             # plt.show()
             plt.tight_layout()
-            plt.savefig("Top 30 Stop Words for " + company.name + " URL " + str(i) + ".png")
-            print("Save Figure into: Top 30 Stop Words for " + company.name + " URL " + str(i) + ".png")
+            plt.savefig("Top 30 Words for " + company.name + " URL " + str(i) + ".png")
+            print("Save Figure into: Top 30 Words for " + company.name + " URL " + str(i) + ".png")
             plt.clf()
 
             stopwords = obo.StopWordCount(url)
             print("Total word counts for stopwords: ", stopwords)
             # read positive word txt file
+
             file = open("positiveWord.txt", "r", encoding='utf-8')
             for line in file:
                 line = line.strip()  # remove \n
@@ -180,6 +187,7 @@ def company_sentiment_analysis(company_list):
                 # print(my_list)
 
             # read negative word txt file
+
             file = open("negativeWord.txt", "r", encoding='utf-8')
             for line in file:
                 line = line.strip()  # remove \n
@@ -190,6 +198,8 @@ def company_sentiment_analysis(company_list):
 
             current_positive_count = 0
             current_negative_count = 0
+            print("------------------------------------------------")
+            print("Executing Rabin-Karp for comparing positive word with positiveWord.txt")
             # loop through the positive list
             for x in my_list:
                 # print(x)
@@ -197,9 +207,9 @@ def company_sentiment_analysis(company_list):
                 pattern = x
                 current_positive_count += rabin_karp(text, pattern)
 
-            print("------------------------------------------------")
             print("Total count of positive words in this article are: " + str(current_positive_count)),
-
+            print("------------------------------------------------")
+            print("Executing Rabin-Karp for comparing negative word with negativeWord.txt")
             # loop through the negative list
             for x in my_list1:
                 # print(x)
@@ -207,10 +217,11 @@ def company_sentiment_analysis(company_list):
                 pattern = x
                 current_negative_count += rabin_karp(text, pattern)
             print("Total count of negative words in this article are: " + str(current_negative_count)),
-            print(current_negative_count)
             print("------------------------------------------------")
             company.positive += current_positive_count
             company.negative += current_negative_count
             print("Cumulative positive words for " + str(company.name) + ": " + str(company.positive))
             print("Cumulative negative words for " + str(company.name) + ": " + str(company.negative))
+            print("------------------------------------------------")
             i += 1
+            url_count += 1

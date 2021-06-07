@@ -5,7 +5,7 @@ import polyline
 API_KEY = 'AIzaSyDKQY-dAMpv32uiWSREDRH83FZRcNUhSmw'
 
 
-def getRoute(num, origin_lat, origin_long, hub_lat, hub_long, dest_lat, dest_long):
+def getRoute(origin_lat, origin_long, hub_lat, hub_long, dest_lat, dest_long):
     origin = origin_lat + ', ' + origin_long
     hub = hub_lat + ', ' + hub_long
     dest = dest_lat + ', ' + dest_long
@@ -81,3 +81,4 @@ def plotAllRoutes(plotting_list, num):
             gmap.plot(lat_hub_dest_list[j], long_hub_dest_list[j], 'cornflowerblue', edge_width=10)
 
     gmap.draw('Map for Customer ' + str(num) + '.html')
+    print('Draw and Write Map for Customer ' + str(num) + '.html')

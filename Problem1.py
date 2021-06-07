@@ -7,6 +7,7 @@ from Customer import CustomerClass
 
 
 def read_raw_company_file():
+    print("Reading Company_Raw_Name_Address.txt")
     company_file = open("Company_Raw_Name_Address.txt", "r")
     company_all_list = company_file.readlines()
     company_object_list = []
@@ -23,6 +24,7 @@ def read_raw_company_file():
 
 
 def read_raw_customer_file():
+    print("Reading Customer_Raw_Origin_Destination.txt")
     customer_file = open("Customer_Raw_Origin_Destination.txt", "r")
     customer_all_list = customer_file.readlines()
     customer_object_list = []
@@ -40,10 +42,12 @@ def read_raw_customer_file():
 
 def calculate_and_write_company_location_coordinate(company_lists):
     for company in company_lists:
+        print("Call Geocoding API for address:", company.address, "to get real latitude and longitude")
         location = GeocodingAPI.getGeoCoord(company.address)
         company.latitude = location[0]
         company.longitude = location[1]
     company_file = open("Company_Full_Details.txt", "w")
+    print("Writing Company_Full_Details.txt")
     for company in company_lists:
         company_file.write(str(company.name) + "\n")
         company_file.write(str(company.address) + "\n")
@@ -53,6 +57,7 @@ def calculate_and_write_company_location_coordinate(company_lists):
 
 def write_customer_2_point_distance(customer_lists):
     customer_file = open("Customer_Origin_Destination_Including_Distance.txt", 'w')
+    print("Writing Customer_Origin_Destination_Including_Distance.txt")
     for customer in customer_lists:
         customer_file.write(str(customer.customer_name) + "\n")
         customer_file.write(str(customer.ori_name) + "\n")
@@ -65,7 +70,8 @@ def write_customer_2_point_distance(customer_lists):
 
 
 def calc_total_distance(customer, company):
-    total_distance = 0
+    print("Call DistanceMatrixAPI to get distance between", customer.ori_name, 'and', company.name)
+    print("Call DistanceMatrixAPI to get distance between", company.name, 'and', customer.des_name)
     distance1 = DistanceMatrixAPI.calc_distance_between_2_point(
         Customer.formatted_coordinates(customer.ori_lat, customer.ori_long),
         Company.formatted_coordinates(company.latitude, company.longitude))
@@ -80,6 +86,8 @@ def generate_file_for_customer_with_each_company(customer_lists, company_lists):
     for customer in customer_lists:
         customer_file_ranking = open(customer.customer_name + " Problem 1 Ranking.txt", 'w')
         customer_file_details_route = open(customer.customer_name + " Delivery Details.txt", 'w')
+        print("Writing " + customer.customer_name + " Problem 1 Ranking.txt")
+        print("Writing " + customer.customer_name + " Delivery Details.txt")
         company_ranking_list = []
         for company in company_lists:
             return_distances = calc_total_distance(customer, company)
@@ -101,7 +109,10 @@ def generate_file_for_customer_with_each_company(customer_lists, company_lists):
                 "Total Distance: " + "{0:.2f}".format(company_ranking_list[i][1]) + " km" + "\n\n")  # distance
             if i != len(company_ranking_list) - 1:
                 if company_ranking_list[i][1] != company_ranking_list[i + 1][1]:
-                    count += 1
+                    count = i + 1
+            else:
+                count = i + 1
+
         customer_file_ranking.close()
         customer_file_details_route.close()
 
@@ -152,6 +163,7 @@ def read_customer_full_details():
 
 # added by jinghui
 def read_customer_ranking_details(c):
+    print("Reading Customer " + c + " Problem 1 Ranking.txt")
     customer_file = open("Customer " + c + " Problem 1 Ranking.txt", "r")
     customer_delivery_list = customer_file.readlines()
     for i in range(len(customer_delivery_list)):
