@@ -52,7 +52,7 @@ def stopword():
 
 
 def StopWordCount(url):
-    print("Executing StopWordCount for URL:", url)
+    print("Executing Boyer Moore Algorithm With Good Suffix Heuristic for stop words in URL:", url)
     # file1 = open(readFile, "r", encoding="utf8")
     file1 = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 

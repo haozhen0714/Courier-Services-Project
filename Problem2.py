@@ -206,7 +206,7 @@ def company_sentiment_analysis(company_list):
             current_positive_count = 0
             current_negative_count = 0
             print("------------------------------------------------")
-            print("Executing Rabin-Karp for comparing positive word with positiveWord.txt")
+            print("Executing Rabin-Karp Algorithm for comparing positive word with positiveWord.txt")
             # loop through the positive list
             for x in my_list:
                 # print(x)
@@ -216,7 +216,7 @@ def company_sentiment_analysis(company_list):
 
             print("Total count of positive words in this article are: " + str(current_positive_count)),
             print("------------------------------------------------")
-            print("Executing Rabin-Karp for comparing negative word with negativeWord.txt")
+            print("Executing Rabin-Karp Algorithm for comparing negative word with negativeWord.txt")
             # loop through the negative list
             for x in my_list1:
                 # print(x)
