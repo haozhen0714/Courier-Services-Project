@@ -3,7 +3,7 @@ def read_p1_p2_ranking_file(customer_list):
     p1p2_dict = {}
     for customer in customer_list:
         customer_p1_ranking_file = open(customer.customer_name + " Problem 1 Ranking.txt", 'r')
-        print("Reading " + customer.customer_name + " Problem 1 Ranking.txt")
+        print("Read " + customer.customer_name + " Problem 1 Ranking.txt")
         p1_result = customer_p1_ranking_file.readlines()
         p1_result = [i.strip() for i in p1_result]
         p1p2_dict[customer.customer_name] = {}
@@ -21,7 +21,7 @@ def read_p1_p2_ranking_file(customer_list):
 
     # Process P2 Ranking File
     company_p2_ranking_file = open("Problem 2 Ranking.txt", 'r')
-    print("Reading Problem 2 Ranking.txt")
+    print("Read Problem 2 Ranking.txt")
     p2_result = company_p2_ranking_file.readlines()
     p2_result = [i.strip() for i in p2_result]
     p2_result.pop()
@@ -33,22 +33,26 @@ def read_p1_p2_ranking_file(customer_list):
         temp_positive = p2_result.pop(0)
         temp_negative = p2_result.pop(0)
         temp_positive_percentage = p2_result.pop(0)
-        p2_dict[temp_p2_company] = {'P2 Score': 5 - int(temp_p2_rank),
+        p2_dict[temp_p2_company] = {'P2 Score': int(temp_p2_rank),  # reverse ranking into score
                                     'Positive': temp_positive,
                                     'Negative': temp_negative,
                                     'Positive Percentage': temp_positive_percentage}
 
         if len(p2_result) != 0:
             p2_result.pop(0)  # pop useless info
-
+    print(p2_dict)
     # push p2_dict into p1p2_dict
     for customer_name in p1p2_dict:
         for company_name in p2_dict:
-            # Reverse ranking score for probability distribution calculation
+            # Reverse ranking into score for probability distribution calculation e.g 5 - 0 = 5, 5 - 4 = 1
             p1p2_dict[customer_name][company_name]['P1 Score'] = len(p2_dict) - int(p1p2_dict[customer_name]
                                                                                     [company_name]['P1 Score'])
             for x in p2_dict[company_name]:
-                p1p2_dict[customer_name][company_name][x] = p2_dict[company_name][x]
+                if x == 'P2 Score':
+                    p1p2_dict[customer_name][company_name][x] = len(p2_dict) - int(p2_dict[company_name][x])
+                else:
+                    p1p2_dict[customer_name][company_name][x] = p2_dict[company_name][x]
+    print(p1p2_dict)
     return p1p2_dict
 
 
@@ -70,7 +74,7 @@ def write_final_ranking_file(p1p2_dict):
     for customer in p1p2_dict:
         ranking_info = []
         final_ranking_file = open(customer + ' Problem 3 Final Result.txt', 'w')
-        print("Writing " + customer + ' Problem 3 Final Result.txt')
+        print("Write " + customer + ' Problem 3 Final Result.txt')
         for company in p1p2_dict[customer]:
             ranking_info.append([company, p1p2_dict[customer][company]['Probability']])
         ranking_info.sort(key=lambda x: x[1], reverse=True)
@@ -87,15 +91,16 @@ def write_final_ranking_file(p1p2_dict):
         index = 0
         for info in ranking_info:
             final_ranking_file.write("Courier Company: " + info[0] + "\n")
+            # Transform score into ranking by using len(company) - score + 1
             final_ranking_file.write("Overall Ranking: " + str(rank_num) + " place\n")
             final_ranking_file.write(
                 "Distance Ranking based on shortest route: " + str(
-                    n_company - p1p2_dict[customer][info[0]]['P1 Score']) + " place\n")
+                    n_company - p1p2_dict[customer][info[0]]['P1 Score'] + 1) + " place\n")
             final_ranking_file.write('Route: ' + str(p1p2_dict[customer][info[0]]['Route']) + "\n")
             final_ranking_file.write(str(p1p2_dict[customer][info[0]]['Total Distance']) + "\n")
             final_ranking_file.write(
                 "Sentiment Ranking based on percentage of positive words: " + str(
-                    n_company - p1p2_dict[customer][info[0]]['P2 Score']) + " place\n")
+                    n_company - p1p2_dict[customer][info[0]]['P2 Score'] + 1) + " place\n")
             final_ranking_file.write(p1p2_dict[customer][info[0]]['Positive'] + "\n")
             final_ranking_file.write(p1p2_dict[customer][info[0]]['Negative'] + "\n")
             final_ranking_file.write(p1p2_dict[customer][info[0]]['Positive Percentage'] + "\n\n")

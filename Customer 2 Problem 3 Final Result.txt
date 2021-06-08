@@ -9,51 +9,51 @@ Conclusion for each company. "1" place is the best ranking representation and so
 ----------------------------------------------------------------------------------------
 Courier Company: City-Link Express Klang
 Overall Ranking: 1 place
-Distance Ranking based on shortest route: 0 place
+Distance Ranking based on shortest route: 1 place
 Route: Subang Jaya --> City-Link Express Klang --> Puncak Alam
 Total Distance: 45.70 km
-Sentiment Ranking based on percentage of positive words: 1 place
+Sentiment Ranking based on percentage of positive words: 2 place
 Positive Word Count: 203
 Negative Word Count: 81
 Positive Percentage: 71.48%
 
 Courier Company: Pos Laju Petaling Jaya
 Overall Ranking: 2 place
-Distance Ranking based on shortest route: 2 place
+Distance Ranking based on shortest route: 3 place
 Route: Subang Jaya --> Pos Laju Petaling Jaya --> Puncak Alam
 Total Distance: 56.10 km
-Sentiment Ranking based on percentage of positive words: 0 place
-Positive Word Count: 829
-Negative Word Count: 326
-Positive Percentage: 71.77%
+Sentiment Ranking based on percentage of positive words: 1 place
+Positive Word Count: 830
+Negative Word Count: 329
+Positive Percentage: 71.61%
 
 Courier Company: DHL Sungai Buloh
 Overall Ranking: 3 place
-Distance Ranking based on shortest route: 1 place
+Distance Ranking based on shortest route: 2 place
 Route: Subang Jaya --> DHL Sungai Buloh --> Puncak Alam
 Total Distance: 47.70 km
-Sentiment Ranking based on percentage of positive words: 3 place
-Positive Word Count: 516
-Negative Word Count: 223
-Positive Percentage: 69.82%
+Sentiment Ranking based on percentage of positive words: 4 place
+Positive Word Count: 508
+Negative Word Count: 221
+Positive Percentage: 69.68%
 
 Courier Company: GDex Batu Caves
 Overall Ranking: 4 place
-Distance Ranking based on shortest route: 3 place
+Distance Ranking based on shortest route: 4 place
 Route: Subang Jaya --> GDex Batu Caves --> Puncak Alam
 Total Distance: 80.80 km
-Sentiment Ranking based on percentage of positive words: 2 place
-Positive Word Count: 407
-Negative Word Count: 175
-Positive Percentage: 69.93%
+Sentiment Ranking based on percentage of positive words: 3 place
+Positive Word Count: 413
+Negative Word Count: 178
+Positive Percentage: 69.88%
 
 Courier Company: J&T Kajang
 Overall Ranking: 5 place
-Distance Ranking based on shortest route: 4 place
+Distance Ranking based on shortest route: 5 place
 Route: Subang Jaya --> J&T Kajang --> Puncak Alam
 Total Distance: 107.60 km
-Sentiment Ranking based on percentage of positive words: 4 place
-Positive Word Count: 340
-Negative Word Count: 192
-Positive Percentage: 63.91%
+Sentiment Ranking based on percentage of positive words: 5 place
+Positive Word Count: 350
+Negative Word Count: 191
+Positive Percentage: 64.70%
 

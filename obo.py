@@ -67,8 +67,7 @@ def StopWordCount(url):
             if found:
                 sw.append(i.decode('utf-8'))
 
-    print("Stop Word:", sw)
-    return sw.__len__()
+    return sw
 
 
 def removeStopWord(url):  # return the list of words without stopwords

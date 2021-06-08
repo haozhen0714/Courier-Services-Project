@@ -157,14 +157,6 @@ def company_sentiment_analysis(company_list):
                 y_wordcount.append(sorteddict[w][0])
             print(x_wordcount, "\n", y_wordcount)
 
-            textfile = open("Words Frequency for " + company.name + " URL " + str(i) + ".txt", "w",
-                            errors="ignore")
-            for element in str(sorteddict):
-                line = str(element).replace(")", ")\n")
-                textfile.writelines(str(line))
-            textfile.close()
-            print("Write txt file into: " + "Words Frequency for " + company.name + " URL " + str(i) + ".txt")
-
             plt.bar(x_wordcount[:30], y_wordcount[:30])
             plt.xticks(x_wordcount[:30], rotation='vertical')
             plt.title("Top 30 Words for " + company.name + " URL " + str(i))
@@ -174,10 +166,25 @@ def company_sentiment_analysis(company_list):
             print("Save Figure into: Top 30 Words for " + company.name + " URL " + str(i) + ".png")
             plt.clf()
 
+            # Calculate Stop Words
             stopwords = obo.StopWordCount(url)
-            print("Total word counts for stopwords: ", stopwords)
-            # read positive word txt file
+            print("Stop Words List:", stopwords)
+            print("Total word counts for stopwords: ", len(stopwords))
 
+            # Write Output
+            textfile = open("Words Frequency for " + company.name + " URL " + str(i) + ".txt", "w",
+                            errors="ignore")
+            # Write Stopwords
+            textfile.write("Stop Words List:\n" + str(stopwords) + "\n" + "Total word counts for stopwords: " + str(
+                len(stopwords)) + "\n\n")
+            textfile.write("Words count/frequency for the text in the article:\n")
+            for element in str(sorteddict):
+                line = str(element).replace(")", ")\n")
+                textfile.writelines(str(line))
+            textfile.close()
+            print("Write txt file into: " + "Words Frequency for " + company.name + " URL " + str(i) + ".txt")
+
+            # read positive word txt file
             file = open("positiveWord.txt", "r", encoding='utf-8')
             for line in file:
                 line = line.strip()  # remove \n

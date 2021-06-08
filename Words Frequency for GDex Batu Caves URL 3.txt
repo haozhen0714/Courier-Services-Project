@@ -1,3 +1,8 @@
+Stop Words List:
+['to', 'from', 'if', 'is', 'to', 'from', 'if', 'is', 'has', 'been', 'to', 'from', 'which', 'if', 'the', 'is', 'to', 'the', 'of', 'in', 'have', 'up', 'in', 'the', 'to', 'has', 'been', 'to', 'from', 'which', 'if', 'the', 'is', 'to', 'the', 'of', 'in', 'have', 'up', 'in', 'the', 'to', 'to', 'from', 'if', 'is', 'from', 'to', 'from', 'to', 'of', 'are', 'to', 'from', 'if', 'is', 'to', 'from', 'if', 'is', 'at', 'in', 'have', 'up', 'in', 'to', 'the', 'of', 'has', 'been', 'to', 'from', 'which', 'if', 'the', 'is', 'to', 'the', 'of', 'in', 'have', 'up', 'in', 'the', 'to', 'the', 'of', 'to', 'the', 'have', 'their', 'to', 'the', 'a', 'in', 'in', 'the', 'of', 'or', 'of', 'a', 'of', 'a', 'by', 'an', 'of', 'and', 'that', 'the', 'by', 'on', 'in', 'of', 'the', 'was', 'in', 'a', 'a', 'of', 'have', 'to', 'which', 'has', 'been', 'in', 'with', 'the', 'of', 'its', 'the', 'be', 'the', 'of', 'to', 'with', 'is', 'to', 'the', 'at', 'that', 'with', 'a', 'of', 'above', 'has', 'the', 'that', 'this', 'the', 'of', 'a', 'in', 'and', 'the', 'of', 'in', 'a', 'is', 'the', 'for', 'an', 'in', 'to', 'the', 'at', 'a', 'of', 'to', 'the', 'of', 'other', 'the', 'that', 'other', 'such', 'as', 'and', 'as', 'a', 'in', 'the', 'to', 'as', 'these', 'to', 'when', 'for', 'for', 'on', 'on', 'to', 'our', 'and', 'to', 'our', 'by', 'all', 'to', 'from', 'if', 'is', 'in', 'in', 'if']
+Total word counts for stopwords: 204
+
+Words count/frequency for the text in the article:
 [(22, 'the')
 , (19, 'to')
 , (17, 'of')
@@ -36,7 +41,6 @@
 , (3, 'Facebook')
 , (3, 'Business')
 , (3, 'Bhd')
-, (3, '7')
 , (2, 'y')
 , (2, 'will')
 , (2, 'which')
@@ -71,6 +75,7 @@
 , (2, 'Home')
 , (2, 'Express')
 , (2, 'China')
+, (2, '7')
 , (2, '12')
 , (2, '')
 , (1, 'years')
@@ -221,6 +226,7 @@
 , (1, 'Van')
 , (1, 'Vacancies')
 , (1, 'Uncle')
+, (1, 'Tuesday')
 , (1, 'The')
 , (1, 'Terms')
 , (1, 'T')
@@ -257,7 +263,6 @@
 , (1, 'Nature')
 , (1, 'Nation')
 , (1, 'Movement')
-, (1, 'Monday')
 , (1, 'Messenger')
 , (1, 'Meanwhile')
 , (1, 'May')
@@ -306,6 +311,7 @@
 , (1, 'About')
 , (1, 'AM')
 , (1, 'A')
+, (1, '8')
 , (1, '55')
 , (1, '5')
 , (1, '4QFY20')

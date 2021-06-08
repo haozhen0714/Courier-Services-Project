@@ -7,7 +7,7 @@ from Customer import CustomerClass
 
 
 def read_raw_company_file():
-    print("Reading Company_Raw_Name_Address.txt")
+    print("Read Company_Raw_Name_Address.txt")
     company_file = open("Company_Raw_Name_Address.txt", "r")
     company_all_list = company_file.readlines()
     company_object_list = []
@@ -24,7 +24,7 @@ def read_raw_company_file():
 
 
 def read_raw_customer_file():
-    print("Reading Customer_Raw_Origin_Destination.txt")
+    print("Read Customer_Raw_Origin_Destination.txt")
     customer_file = open("Customer_Raw_Origin_Destination.txt", "r")
     customer_all_list = customer_file.readlines()
     customer_object_list = []
@@ -47,7 +47,7 @@ def calculate_and_write_company_location_coordinate(company_lists):
         company.latitude = location[0]
         company.longitude = location[1]
     company_file = open("Company_Full_Details.txt", "w")
-    print("Writing Company_Full_Details.txt")
+    print("Write Company_Full_Details.txt")
     for company in company_lists:
         company_file.write(str(company.name) + "\n")
         company_file.write(str(company.address) + "\n")
@@ -57,7 +57,7 @@ def calculate_and_write_company_location_coordinate(company_lists):
 
 def write_customer_2_point_distance(customer_lists):
     customer_file = open("Customer_Origin_Destination_Including_Distance.txt", 'w')
-    print("Writing Customer_Origin_Destination_Including_Distance.txt")
+    print("Write Customer_Origin_Destination_Including_Distance.txt")
     for customer in customer_lists:
         customer_file.write(str(customer.customer_name) + "\n")
         customer_file.write(str(customer.ori_name) + "\n")
@@ -86,8 +86,8 @@ def generate_file_for_customer_with_each_company(customer_lists, company_lists):
     for customer in customer_lists:
         customer_file_ranking = open(customer.customer_name + " Problem 1 Ranking.txt", 'w')
         customer_file_details_route = open(customer.customer_name + " Delivery Details.txt", 'w')
-        print("Writing " + customer.customer_name + " Problem 1 Ranking.txt")
-        print("Writing " + customer.customer_name + " Delivery Details.txt")
+        print("Write " + customer.customer_name + " Problem 1 Ranking.txt")
+        print("Write " + customer.customer_name + " Delivery Details.txt")
         company_ranking_list = []
         for company in company_lists:
             return_distances = calc_total_distance(customer, company)
@@ -163,7 +163,7 @@ def read_customer_full_details():
 
 # added by jinghui
 def read_customer_ranking_details(c):
-    print("Reading Customer " + c + " Problem 1 Ranking.txt")
+    print("Read Customer " + c + " Problem 1 Ranking.txt")
     customer_file = open("Customer " + c + " Problem 1 Ranking.txt", "r")
     customer_delivery_list = customer_file.readlines()
     for i in range(len(customer_delivery_list)):
