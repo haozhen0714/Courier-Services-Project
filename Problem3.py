@@ -40,19 +40,22 @@ def read_p1_p2_ranking_file(customer_list):
 
         if len(p2_result) != 0:
             p2_result.pop(0)  # pop useless info
-    print(p2_dict)
+    #print(p2_dict)
     # push p2_dict into p1p2_dict
     for customer_name in p1p2_dict:
         for company_name in p2_dict:
             # Reverse ranking into score for probability distribution calculation e.g 5 - 0 = 5, 5 - 4 = 1
-            p1p2_dict[customer_name][company_name]['P1 Score'] = len(p2_dict) - int(p1p2_dict[customer_name]
-                                                                                    [company_name]['P1 Score'])
+            p1p2_dict[customer_name][company_name]['P1 Score'] = transform_rank_to_score(len(p2_dict),
+                                                                                         int(p1p2_dict[customer_name]
+                                                                                             [company_name][
+                                                                                                 'P1 Score']))
             for x in p2_dict[company_name]:
                 if x == 'P2 Score':
-                    p1p2_dict[customer_name][company_name][x] = len(p2_dict) - int(p2_dict[company_name][x])
+                    p1p2_dict[customer_name][company_name][x] = transform_rank_to_score(len(p2_dict),
+                                                                                        int(p2_dict[company_name][x]))
                 else:
                     p1p2_dict[customer_name][company_name][x] = p2_dict[company_name][x]
-    print(p1p2_dict)
+    #print(p1p2_dict)
     return p1p2_dict
 
 
@@ -113,3 +116,7 @@ def write_final_ranking_file(p1p2_dict):
             else:
                 rank_num = index + 1
         final_ranking_file.close()
+
+
+def transform_rank_to_score(n_company, rank):
+    return n_company - rank

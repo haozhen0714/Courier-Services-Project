@@ -11,7 +11,7 @@ Courier Company: City-Link Express Klang
 Overall Ranking: 1 place
 Distance Ranking based on shortest route: 1 place
 Route: Subang Jaya --> City-Link Express Klang --> Puncak Alam
-Total Distance: 45.70 km
+Total Distance: 47.60 km
 Sentiment Ranking based on percentage of positive words: 2 place
 Positive Word Count: 203
 Negative Word Count: 81
