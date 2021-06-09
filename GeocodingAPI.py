@@ -12,11 +12,7 @@ def getGeoCoord(address: str):
     base_url = 'https://maps.googleapis.com/maps/api/geocode/json?'
     response = requests.get(base_url, params=params)
     data = response.json()
-    '''
-    print("Geocoding API data in Dictionary:")
-    print(data)
-    print()
-    '''
+
     if data['status'] == 'OK':
         result = data['results'][0]
         location = result['geometry']['location']

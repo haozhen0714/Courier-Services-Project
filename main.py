@@ -17,7 +17,7 @@ p1.generate_file_for_customer_with_each_company(customer_list,
                                                 company_list)  # generate score for problem 1 and save it in file
 
 # added for naim code
-CompanyMap.draw_company_map()
+CompanyMap.draw_company_map(company_list)
 
 # added by jinghui
 customers_map = []
@@ -26,6 +26,7 @@ for i in range(1, len(customer_list) + 1):
 
 for i in range(len(customers_map)):
     MapForOneCustomer.plotMap(customers_map[i], i + 1)
+
 
 # P2
 print('----------------------------------------------------')
