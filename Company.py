@@ -6,7 +6,7 @@ class CompanyClass:
 
     def __init__(self, name, address, latitude=-1, longitude=-1, url_list=None, positive=0, negative=0,
                  positive_percentage=0):
-        if url_list is None:
+        if url_list is None:  
             url_list = []
         self.name = name
         self.address = address
