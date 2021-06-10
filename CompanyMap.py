@@ -4,10 +4,10 @@ API_KEY = 'AIzaSyDKQY-dAMpv32uiWSREDRH83FZRcNUhSmw'
 
 
 def draw_company_map(company_list):
-    gmapOne = gmplot.GoogleMapPlotter(3.112585695236, 101.6397000538541, 10, API_KEY=API_KEY)
+    gmapOne = gmplot.GoogleMapPlotter(3.112585695236, 101.6397000538541, 10, API_KEY=API_KEY) #plotting the lattitude and longitude using request api key
     gmapOne.apikey = API_KEY
-    gmapOne.coloricon = "http://www.googlemapsmarkers.com/v1/%s/"
-    color_list = ['blue', 'red', 'yellow', 'black', 'orange']
+    gmapOne.coloricon = "http://www.googlemapsmarkers.com/v1/%s/" 
+    color_list = ['blue', 'red', 'yellow', 'black', 'orange'] # this color icon to differentiate every each location
     for i in range(len(company_list)):
         gmapOne.marker(float(company_list[i].latitude), float(company_list[i].longitude),
                        color=color_list[i], title=company_list[i].name)
