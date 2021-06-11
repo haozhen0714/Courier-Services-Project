@@ -6,14 +6,14 @@ from Company import CompanyClass
 from Customer import CustomerClass
 
 
-def read_raw_company_file():
+def read_raw_company_file():  # O(n) : n company
     print("Read Company_Raw_Name_Address.txt")
     company_file = open("P1/Company_Raw_Name_Address.txt", "r")
     company_all_list = company_file.readlines()
     company_object_list = []
     c = []
-    while len(company_all_list) != 0:  # O(y)
-        for i in range(2):  # O(y)
+    while len(company_all_list) != 0:
+        for i in range(2):  # O(2), the time complexity is not significant
             c.append(company_all_list.pop(0).replace('\n', ''))
         if len(company_all_list) != 0:
             company_all_list.pop(0)
@@ -23,14 +23,14 @@ def read_raw_company_file():
     return company_object_list
 
 
-def read_raw_customer_file():
+def read_raw_customer_file():  # O(m): m customer
     print("Read Customer_Raw_Origin_Destination.txt")
     customer_file = open("P1/Customer_Raw_Origin_Destination.txt", "r")
     customer_all_list = customer_file.readlines()
     customer_object_list = []
     c = []
-    while len(customer_all_list) != 0:  # O(z)
-        for i in range(7):  # (z)
+    while len(customer_all_list) != 0:  # O(m): m customer
+        for i in range(7):  # O(7), not significant
             c.append(customer_all_list.pop(0).replace('\n', ''))
         if len(customer_all_list) != 0:
             customer_all_list.pop(0)
@@ -40,7 +40,7 @@ def read_raw_customer_file():
     return customer_object_list
 
 
-def calculate_and_write_company_location_coordinate(company_lists):
+def calculate_and_write_company_location_coordinate(company_lists):  # O(n): n company
     for company in company_lists:  # O(n)
         print("Call Geocoding API for address:", company.address, "to get real latitude and longitude")
         location = GeocodingAPI.getGeoCoord(company.address)
@@ -55,10 +55,10 @@ def calculate_and_write_company_location_coordinate(company_lists):
         company_file.write(str(company.longitude) + "\n\n")
 
 
-def write_customer_2_point_distance(customer_lists):
+def write_customer_2_point_distance(customer_lists):  # O(m): m customer
     customer_file = open("P1/Customer_Origin_Destination_Including_Distance.txt", 'w')
     print("Write Customer_Origin_Destination_Including_Distance.txt")
-    for customer in customer_lists:  # O(m)
+    for customer in customer_lists:
         customer_file.write(str(customer.customer_name) + "\n")
         customer_file.write(str(customer.ori_name) + "\n")
         customer_file.write(str(customer.ori_lat) + "\n")
@@ -69,7 +69,7 @@ def write_customer_2_point_distance(customer_lists):
         customer_file.write(str(customer.direct_distance) + "\n\n")
 
 
-def calc_total_distance(customer, company):
+def calc_total_distance(customer, company):  # O(1)
     print("Call DistanceMatrixAPI to get distance between", customer.ori_name, 'and', company.name)
     print("Call DistanceMatrixAPI to get distance between", company.name, 'and', customer.des_name)
     distance1 = DistanceMatrixAPI.calc_distance_between_2_point(
@@ -82,7 +82,8 @@ def calc_total_distance(customer, company):
     return distance1, distance2, total_distance
 
 
-def generate_file_for_customer_with_each_company(customer_lists, company_lists):
+def generate_file_for_customer_with_each_company(customer_lists,
+                                                 company_lists):  # O(mn): nested loop for each customer and company
     for customer in customer_lists:  # O(m)
         customer_file_ranking = open("P1/" + customer.customer_name + " Problem 1 Ranking.txt", 'w')
         customer_file_details_route = open("P1/" + customer.customer_name + " Delivery Details.txt", 'w')
@@ -99,7 +100,7 @@ def generate_file_for_customer_with_each_company(customer_lists, company_lists):
             company_ranking_list.append([company, total_distance])
         company_ranking_list.sort(key=lambda x: x[1])
         count = 0
-        for i in range(len(company_ranking_list)):  # O(k) KIV not sure about the time complexity
+        for i in range(len(company_ranking_list)):  # O(n) at the end
             customer_file_ranking.write(str(count) + "\n")
             customer_file_ranking.write(str(company_ranking_list[i][0].name) + "\n")  # company object
             customer_file_ranking.write(
@@ -117,24 +118,24 @@ def generate_file_for_customer_with_each_company(customer_lists, company_lists):
         customer_file_details_route.close()
 
 
-def preprocessing_company():
+def preprocessing_company():  # O(1)
     company_list = read_raw_company_file()
     calculate_and_write_company_location_coordinate(company_list)
 
 
-def preprocessing_customer():
+def preprocessing_customer():  # O(1)
     customer_list = read_raw_customer_file()
     write_customer_2_point_distance(customer_list)
 
 
-def read_company_full_details():
+def read_company_full_details():  # O(n): n company
     preprocessing_company()
     company_file = open("P1/Company_Full_Details.txt", "r")
     company_all_list = company_file.readlines()
     company_object_list = []
     c = []
-    while len(company_all_list) != 0:  # O(y)
-        for i in range(4):  # O(y)
+    while len(company_all_list) != 0:  # O(n): n company
+        for i in range(4):  # O(4), not significant time complexity
             c.append(company_all_list.pop(0).replace('\n', ''))
         if len(company_all_list) != 0:
             company_all_list.pop(0)
@@ -144,14 +145,14 @@ def read_company_full_details():
     return company_object_list
 
 
-def read_customer_full_details():
+def read_customer_full_details():  # O(m): m customer
     preprocessing_customer()
     customer_file = open("P1/Customer_Origin_Destination_Including_Distance.txt", "r")
     customer_all_list = customer_file.readlines()
     customer_object_list = []
     c = []
-    while len(customer_all_list) != 0:  # O(z)
-        for i in range(8):  # O(z)
+    while len(customer_all_list) != 0:  # O(m): m customer
+        for i in range(8):  # O(8), not significant
             c.append(customer_all_list.pop(0).replace('\n', ''))
         if len(customer_all_list) != 0:
             customer_all_list.pop(0)
@@ -162,16 +163,16 @@ def read_customer_full_details():
 
 
 # added by jinghui
-def read_customer_ranking_details(c):
+def read_customer_ranking_details(c):  # O(m): m customer at the end
     print("Read Customer " + c + " Problem 1 Ranking.txt")
     customer_file = open("P1/Customer " + c + " Problem 1 Ranking.txt", "r")
     customer_delivery_list = customer_file.readlines()
-    for i in range(len(customer_delivery_list)):  # O(b)
+    for i in range(len(customer_delivery_list)):  # O(m) at the end
         customer_delivery_list[i] = customer_delivery_list[i].replace('\n', '')
     details = []
     ranking = []
-    while len(customer_delivery_list) != 0:  # O(b)
-        for i in range(4):  # O(b)
+    while len(customer_delivery_list) != 0:  # O(m): m customer at the end
+        for i in range(4):  # O(4)
             details.append(customer_delivery_list.pop(0))
         customer_delivery_list.pop(0)
         ranking.append(details)

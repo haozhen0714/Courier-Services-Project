@@ -3,7 +3,7 @@ import MapsPlotting
 API_KEY = 'AIzaSyDKQY-dAMpv32uiWSREDRH83FZRcNUhSmw'
 
 
-def plotMap(customer, num):
+def plotMap(customer, num):  # I assume is O(nm): m customer n company
     route = getAllRoute(customer)
     company = read_company_full_details()
     customer_distance = read_customer_origin_destination_including_distance()
@@ -49,7 +49,7 @@ def getAllRoute(customer):
     return route_all_list
 
 
-def read_company_full_details():
+def read_company_full_details():  # O(n): n company
     print("Read Company_Full_Details.txt")
     company_file = open("P1/Company_Full_Details.txt", "r")
     company_list = company_file.readlines()
@@ -59,7 +59,7 @@ def read_company_full_details():
     return company_list
 
 
-def read_customer_origin_destination_including_distance():
+def read_customer_origin_destination_including_distance():  # O(m): m customer
     print("Read Customer_Origin_Destination_Including_Distance.txt")
     customer_origin_dest_distance_file = open("P1/Customer_Origin_Destination_Including_Distance.txt", "r")
     customer_origin_dest_distance_list = customer_origin_dest_distance_file.readlines()
