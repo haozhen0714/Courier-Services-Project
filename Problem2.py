@@ -8,7 +8,7 @@ import obo
 import matplotlib.pyplot as plt
 
 
-def add_company_URL(company_list):
+def add_company_URL(company_list):  # O(nu): n company, u URL
     read_URL = open('P2/All Company URL.txt', 'r')
     company_URL = read_URL.readlines()
     company_URL = [i.strip() for i in company_URL]
@@ -64,7 +64,7 @@ def generate_ranking_file_for_p2(company_list):
     p2_ranking_file.close()
 
 
-def plot_positive_negative_graph(company_list):
+def plot_positive_negative_graph(company_list):  # O(2) = O(1)
     company = [i.name for i in company_list]
     total_positive_list = [i.positive for i in company_list]
     total_negative_list = [i.negative for i in company_list]
@@ -79,7 +79,7 @@ def plot_positive_negative_graph(company_list):
         plot(fig, filename=graph[0])
 
 
-def rabin_karp(T, P, d=256, q=101):  # time complexity:O(n)
+def rabin_karp(T, P, d=256, q=101):  # O(a + b): a: len of text, b: len of pattern
     n = len(T)  # length of text string
     m = len(P)  # length of pattern string
     h = 1
@@ -120,11 +120,11 @@ def rabin_karp(T, P, d=256, q=101):  # time complexity:O(n)
     return count
 
 
-def company_sentiment_analysis(company_list):
+def company_sentiment_analysis(company_list): # O(nu): n company, u URL
     url_count = 1
     for company in company_list:
         i = 1
-        for url in company.url_list:  # time complexity:O(n^2)
+        for url in company.url_list:
             r = requests.get(url)
             print("")
             print("URL", url_count, ": Url of the article: " + url)

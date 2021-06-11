@@ -51,7 +51,7 @@ def stopword():
     return stopwords
 
 
-def StopWordCount(url):
+def StopWordCount(url):  # O(wp) where w is the text and b is pattern
     print("Executing Boyer Moore Algorithm With Good Suffix Heuristic for stop words in URL:", url)
     # file1 = open(readFile, "r", encoding="utf8")
     file1 = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -88,7 +88,7 @@ def removeStopWord(url):  # return the list of words without stopwords
     return new
 
 
-def preprocess1(shift, bpos, pat, m):
+def preprocess1(shift, bpos, pat, m):  # O(b^2) where b is length of pattern
     # m is the length of pattern
     i = m
     j = m + 1
@@ -106,7 +106,7 @@ def preprocess1(shift, bpos, pat, m):
         bpos[i] = j
 
 
-def preprocess2(shift, bpos, m):
+def preprocess2(shift, bpos, m):  # O(b) where b is length of pattern
     j = bpos[0]
     for i in range(m + 1):
 
@@ -117,7 +117,7 @@ def preprocess2(shift, bpos, m):
             j = bpos[j]
 
 
-def boyer_goodSuffix(pat, text):
+def boyer_goodSuffix(pat, text):  # O(a(b^2)) where a is the length of text and b is length of pattern
     # s is shift of the pattern with respect to text
     s = 0
     m = len(pat)
