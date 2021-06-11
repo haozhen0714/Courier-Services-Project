@@ -51,7 +51,7 @@ def getAllRoute(customer):
 
 def read_company_full_details():
     print("Read Company_Full_Details.txt")
-    company_file = open("Company_Full_Details.txt", "r")
+    company_file = open("P1/Company_Full_Details.txt", "r")
     company_list = company_file.readlines()
     for i in range(len(company_list)):
         company_list[i] = company_list[i].replace('\n', '')
@@ -61,7 +61,7 @@ def read_company_full_details():
 
 def read_customer_origin_destination_including_distance():
     print("Read Customer_Origin_Destination_Including_Distance.txt")
-    customer_origin_dest_distance_file = open("Customer_Origin_Destination_Including_Distance.txt", "r")
+    customer_origin_dest_distance_file = open("P1/Customer_Origin_Destination_Including_Distance.txt", "r")
     customer_origin_dest_distance_list = customer_origin_dest_distance_file.readlines()
     for i in range(len(customer_origin_dest_distance_list)):
         customer_origin_dest_distance_list[i] = customer_origin_dest_distance_list[i].replace('\n', '')

@@ -1,0 +1,25 @@
+0
+City-Link Express Klang
+Subang Jaya --> City-Link Express Klang --> Puncak Alam
+Total Distance: 47.60 km
+
+1
+DHL Sungai Buloh
+Subang Jaya --> DHL Sungai Buloh --> Puncak Alam
+Total Distance: 47.70 km
+
+2
+Pos Laju Petaling Jaya
+Subang Jaya --> Pos Laju Petaling Jaya --> Puncak Alam
+Total Distance: 56.10 km
+
+3
+GDex Batu Caves
+Subang Jaya --> GDex Batu Caves --> Puncak Alam
+Total Distance: 80.80 km
+
+4
+J&T Kajang
+Subang Jaya --> J&T Kajang --> Puncak Alam
+Total Distance: 107.60 km
+

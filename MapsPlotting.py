@@ -80,5 +80,5 @@ def plotAllRoutes(plotting_list, num):
             gmap.scatter(lat_hub_dest_list[j], long_hub_dest_list[j], 'cornflowerblue', size=2, marker=False)
             gmap.plot(lat_hub_dest_list[j], long_hub_dest_list[j], 'cornflowerblue', edge_width=10)
 
-    gmap.draw('Map for Customer ' + str(num) + '.html')
+    gmap.draw('P1/Map for Customer ' + str(num) + '.html')
     print('Draw and Write Map for Customer ' + str(num) + '.html')

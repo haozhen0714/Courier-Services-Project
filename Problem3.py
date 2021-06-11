@@ -2,7 +2,7 @@ def read_p1_p2_ranking_file(customer_list):
     # Process Each Customer P1 Ranking File
     p1p2_dict = {}
     for customer in customer_list:
-        customer_p1_ranking_file = open(customer.customer_name + " Problem 1 Ranking.txt", 'r')
+        customer_p1_ranking_file = open("P1/" + customer.customer_name + " Problem 1 Ranking.txt", 'r')
         print("Read " + customer.customer_name + " Problem 1 Ranking.txt")
         p1_result = customer_p1_ranking_file.readlines()
         p1_result = [i.strip() for i in p1_result]
@@ -20,7 +20,7 @@ def read_p1_p2_ranking_file(customer_list):
         customer_p1_ranking_file.close()
 
     # Process P2 Ranking File
-    company_p2_ranking_file = open("Problem 2 Ranking.txt", 'r')
+    company_p2_ranking_file = open("P2/Problem 2 Ranking.txt", 'r')
     print("Read Problem 2 Ranking.txt")
     p2_result = company_p2_ranking_file.readlines()
     p2_result = [i.strip() for i in p2_result]
@@ -76,7 +76,7 @@ def write_final_ranking_file(p1p2_dict):
     n_company = len(p1p2_dict[[i for i in p1p2_dict][0]])
     for customer in p1p2_dict:
         ranking_info = []
-        final_ranking_file = open(customer + ' Problem 3 Final Result.txt', 'w')
+        final_ranking_file = open("P3/" + customer + ' Problem 3 Final Result.txt', 'w')
         print("Write " + customer + ' Problem 3 Final Result.txt')
         for company in p1p2_dict[customer]:
             ranking_info.append([company, p1p2_dict[customer][company]['Probability']])

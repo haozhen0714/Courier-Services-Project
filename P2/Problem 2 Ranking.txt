@@ -1,0 +1,32 @@
+0
+Pos Laju Petaling Jaya
+Positive Word Count: 823
+Negative Word Count: 320
+Positive Percentage: 72.00%
+
+1
+City-Link Express Klang
+Positive Word Count: 205
+Negative Word Count: 81
+Positive Percentage: 71.68%
+
+2
+DHL Sungai Buloh
+Positive Word Count: 507
+Negative Word Count: 221
+Positive Percentage: 69.64%
+
+3
+GDex Batu Caves
+Positive Word Count: 403
+Negative Word Count: 181
+Positive Percentage: 69.01%
+
+4
+J&T Kajang
+Positive Word Count: 349
+Negative Word Count: 194
+Positive Percentage: 64.27%
+
+Conclusion: 
+Pos Laju Petaling Jaya is ranked number 1 out of 5 companies. Pos Laju Petaling Jaya is the highest ranking courier company. It has the highest percentage of positive word count. City-Link Express Klang is ranked number 2 out of 5 companies. DHL Sungai Buloh is ranked number 3 out of 5 companies. GDex Batu Caves is ranked number 4 out of 5 companies. J&T Kajang is ranked number 5 out of 5 companies. J&T Kajang is the lowest ranking courier company.

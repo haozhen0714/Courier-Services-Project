@@ -45,7 +45,7 @@ def sortFreqDict(freqdict):
 
 # stop words list
 def stopword():
-    st = open("stopwords.txt")
+    st = open("P2/stopwords.txt")
     stop = st.read()
     stopwords = stop.split(",")
     return stopwords

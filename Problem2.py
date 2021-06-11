@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 def add_company_URL(company_list):
-    read_URL = open('All Company URL.txt', 'r')
+    read_URL = open('P2/All Company URL.txt', 'r')
     company_URL = read_URL.readlines()
     company_URL = [i.strip() for i in company_URL]
     for company in company_list:
@@ -28,7 +28,7 @@ def generate_ranking_file_for_p2(company_list):
     for company in company_list:
         company.calc_positive_percentage()  # compute positive percentage for each company
     company_list.sort(key=lambda x: x.positive_percentage, reverse=True)
-    p2_ranking_file = open('Problem 2 Ranking.txt', 'w')
+    p2_ranking_file = open('P2/Problem 2 Ranking.txt', 'w')
     text = ""
     conclusion = ""
     last_place = len(company_list) - 1
@@ -68,8 +68,8 @@ def plot_positive_negative_graph(company_list):
     company = [i.name for i in company_list]
     total_positive_list = [i.positive for i in company_list]
     total_negative_list = [i.negative for i in company_list]
-    graph_type = [["Company's Positive Sentiment Analysis Graph.html", total_positive_list],
-                  ["Company's Negative Sentiment Analysis Graph.html", total_negative_list]]
+    graph_type = [["P2/Company's Positive Sentiment Analysis Graph.html", total_positive_list],
+                  ["P2/Company's Negative Sentiment Analysis Graph.html", total_negative_list]]
     for graph in graph_type:
         data = [go.Bar(
             x=company,
@@ -162,7 +162,7 @@ def company_sentiment_analysis(company_list):
             plt.title("Top 30 Words for " + company.name + " URL " + str(i))
             # plt.show()
             plt.tight_layout()
-            plt.savefig("Top 30 Words for " + company.name + " URL " + str(i) + ".png")
+            plt.savefig("P2/Top 30 Words for " + company.name + " URL " + str(i) + ".png")
             print("Save Figure into: Top 30 Words for " + company.name + " URL " + str(i) + ".png")
             plt.clf()
 
@@ -172,7 +172,7 @@ def company_sentiment_analysis(company_list):
             print("Total word counts for stopwords: ", len(stopwords))
 
             # Write Output
-            textfile = open("Words Frequency for " + company.name + " URL " + str(i) + ".txt", "w",
+            textfile = open("P2/Words Frequency for " + company.name + " URL " + str(i) + ".txt", "w",
                             errors="ignore")
             # Write Stopwords
             textfile.write("Stop Words List:\n" + str(stopwords) + "\n" + "Total word counts for stopwords: " + str(
@@ -185,7 +185,7 @@ def company_sentiment_analysis(company_list):
             print("Write txt file into: " + "Words Frequency for " + company.name + " URL " + str(i) + ".txt")
 
             # read positive word txt file
-            file = open("positiveWord.txt", "r", encoding='utf-8')
+            file = open("P2/positiveWord.txt", "r", encoding='utf-8')
             for line in file:
                 line = line.strip()  # remove \n
                 line = line.replace(" ", "")  # remove additional space
@@ -195,7 +195,7 @@ def company_sentiment_analysis(company_list):
 
             # read negative word txt file
 
-            file = open("negativeWord.txt", "r", encoding='utf-8')
+            file = open("P2/negativeWord.txt", "r", encoding='utf-8')
             for line in file:
                 line = line.strip()  # remove \n
                 line = line.replace(" ", "")  # remove additional space

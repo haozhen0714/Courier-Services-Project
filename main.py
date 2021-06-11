@@ -27,7 +27,6 @@ for i in range(1, len(customer_list) + 1):
 for i in range(len(customers_map)):
     MapForOneCustomer.plotMap(customers_map[i], i + 1)
 
-
 # P2
 print('----------------------------------------------------')
 print("Executing Problem 2")

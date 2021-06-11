@@ -17,5 +17,5 @@ def draw_company_map(company_list):
 
     # gmapOne.scatter(lat,lang,'#ff000',size=100,marker=True)
     # gmapOne.plot(lat,lang,'blue',edge_width=2.5)
-    gmapOne.draw("Company Map.html")
+    gmapOne.draw("P1/Company Map.html")
     print("Draw and write Company Map.html")

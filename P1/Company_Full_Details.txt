@@ -1,0 +1,25 @@
+City-Link Express Klang
+52, Jalan Nanas, Kawasan 18, 41400 Klang, Selangor
+3.049687
+101.4460796
+
+Pos Laju Petaling Jaya
+12D & 12E, Jalan Tandang, Seksyen 51 46050, 46100 Petaling Jaya, Selangor
+3.0866413
+101.6300888
+
+GDex Batu Caves
+NO 16, Jalan Sbc 8, Taman Sri Batu Caves, 68100 Batu Caves, Selangor
+3.2330888
+101.6846039
+
+J&T Kajang
+No.11, Jalan Seri Baiduri 2, Taman Seri Baiduri, 43000 Kajang, Selangor
+2.9744293
+101.8287136
+
+DHL Sungai Buloh
+G-3A,Putra One Residence, Persiaran Bukit Rahman Putra 1, 40160 Sungai Buloh, Selangor
+3.223594
+101.5566248
+
