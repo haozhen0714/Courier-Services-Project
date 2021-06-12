@@ -1,4 +1,4 @@
-def read_p1_p2_ranking_file(customer_list):
+def read_p1_p2_ranking_file(customer_list):  # O(n) + O(m): n company, m customer
     # Process Each Customer P1 Ranking File
     p1p2_dict = {}
     for customer in customer_list:
@@ -40,7 +40,7 @@ def read_p1_p2_ranking_file(customer_list):
 
         if len(p2_result) != 0:
             p2_result.pop(0)  # pop useless info
-    #print(p2_dict)
+    # print(p2_dict)
     # push p2_dict into p1p2_dict
     for customer_name in p1p2_dict:
         for company_name in p2_dict:
@@ -55,11 +55,11 @@ def read_p1_p2_ranking_file(customer_list):
                                                                                         int(p2_dict[company_name][x]))
                 else:
                     p1p2_dict[customer_name][company_name][x] = p2_dict[company_name][x]
-    #print(p1p2_dict)
+    # print(p1p2_dict)
     return p1p2_dict
 
 
-def calc_probability_distribution(p1p2_dict):
+def calc_probability_distribution(p1p2_dict):  # O(mn): m customer, n company
     n_company = len(p1p2_dict[[i for i in p1p2_dict][0]])
     total_score = (n_company * (n_company + 1)) / 2
     for customer in p1p2_dict:
@@ -72,7 +72,7 @@ def calc_probability_distribution(p1p2_dict):
             print("Probability for", company, ":", p1p2_dict[customer][company]['Probability'])
 
 
-def write_final_ranking_file(p1p2_dict):
+def write_final_ranking_file(p1p2_dict):  # O(mn): m customer, n company
     n_company = len(p1p2_dict[[i for i in p1p2_dict][0]])
     for customer in p1p2_dict:
         ranking_info = []
@@ -118,5 +118,5 @@ def write_final_ranking_file(p1p2_dict):
         final_ranking_file.close()
 
 
-def transform_rank_to_score(n_company, rank):
+def transform_rank_to_score(n_company, rank):  # O(1)
     return n_company - rank
