@@ -1,7 +1,7 @@
 Probability Distribution of each Courier Company for Customer 1:
-DHL Sungai Buloh: 0.2533
+DHL Sungai Buloh: 0.2800
 Pos Laju Petaling Jaya: 0.2533
-GDex Batu Caves: 0.2400
+GDex Batu Caves: 0.2133
 City-Link Express Klang: 0.1867
 J&T Kajang: 0.0667
 ----------------------------------------------------------------------------------------
@@ -12,30 +12,30 @@ Overall Ranking: 1 place
 Distance Ranking based on shortest route: 1 place
 Route: Rawang --> DHL Sungai Buloh --> Bukit Jelutong
 Total Distance: 57.30 km
-Sentiment Ranking based on percentage of positive words: 4 place
-Positive Word Count: 505
-Negative Word Count: 220
-Positive Percentage: 69.66%
+Sentiment Ranking based on percentage of positive words: 3 place
+Positive Word Count: 506
+Negative Word Count: 221
+Positive Percentage: 69.60%
 
 Courier Company: Pos Laju Petaling Jaya
-Overall Ranking: 1 place
+Overall Ranking: 2 place
 Distance Ranking based on shortest route: 3 place
 Route: Rawang --> Pos Laju Petaling Jaya --> Bukit Jelutong
 Total Distance: 68.80 km
 Sentiment Ranking based on percentage of positive words: 1 place
-Positive Word Count: 828
-Negative Word Count: 325
-Positive Percentage: 71.81%
+Positive Word Count: 818
+Negative Word Count: 322
+Positive Percentage: 71.75%
 
 Courier Company: GDex Batu Caves
 Overall Ranking: 3 place
 Distance Ranking based on shortest route: 2 place
 Route: Rawang --> GDex Batu Caves --> Bukit Jelutong
 Total Distance: 61.50 km
-Sentiment Ranking based on percentage of positive words: 3 place
-Positive Word Count: 388
-Negative Word Count: 168
-Positive Percentage: 69.78%
+Sentiment Ranking based on percentage of positive words: 4 place
+Positive Word Count: 385
+Negative Word Count: 172
+Positive Percentage: 69.12%
 
 Courier Company: City-Link Express Klang
 Overall Ranking: 4 place

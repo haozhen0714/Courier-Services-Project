@@ -2,8 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import plotly.graph_objects as go
 from plotly.offline import plot
-import plotly.graph_objs as go
-from urllib.request import Request, urlopen
+# import plotly.graph_objs as go
 import obo
 import matplotlib.pyplot as plt
 
@@ -23,7 +22,7 @@ def add_company_URL(company_list):  # O(nu): n company, u URL
     read_URL.close()
 
 
-def generate_ranking_file_for_p2(company_list):
+def generate_ranking_file_for_p2(company_list):  # O(n)
     company_list = company_list.copy()
     for company in company_list:
         company.calc_positive_percentage()  # compute positive percentage for each company
@@ -120,7 +119,7 @@ def rabin_karp(T, P, d=256, q=101):  # O(a + b): a: len of text, b: len of patte
     return count
 
 
-def company_sentiment_analysis(company_list): # O(nu): n company, u URL
+def company_sentiment_analysis(company_list):  # O(nu): n company, u URL
     url_count = 1
     for company in company_list:
         i = 1
@@ -141,8 +140,8 @@ def company_sentiment_analysis(company_list): # O(nu): n company, u URL
             text = soup.get_text()
             # print(text)
 
-            response = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            html = urlopen(response).read()
+            # response = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            # html = urlopen(response).read()
             # text = obo.stripTags(html).lower()
             # text = text.replace('&amp;amp;', '&')
             wordlist = obo.stripNonAlphaNum(text)
