@@ -1,9 +1,9 @@
 Probability Distribution of each Courier Company for Customer 3:
 Pos Laju Petaling Jaya: 0.3333
+GDex Batu Caves: 0.2000
 J&T Kajang: 0.1867
 City-Link Express Klang: 0.1867
-GDex Batu Caves: 0.1733
-DHL Sungai Buloh: 0.1200
+DHL Sungai Buloh: 0.0933
 ----------------------------------------------------------------------------------------
 Conclusion for each company. "1" place is the best ranking representation and so on...
 ----------------------------------------------------------------------------------------
@@ -13,12 +13,22 @@ Distance Ranking based on shortest route: 1 place
 Route: Ampang --> Pos Laju Petaling Jaya --> Cyberjaya
 Total Distance: 56.30 km
 Sentiment Ranking based on percentage of positive words: 1 place
-Positive Word Count: 823
-Negative Word Count: 320
-Positive Percentage: 72.00%
+Positive Word Count: 828
+Negative Word Count: 325
+Positive Percentage: 71.81%
+
+Courier Company: GDex Batu Caves
+Overall Ranking: 2 place
+Distance Ranking based on shortest route: 3 place
+Route: Ampang --> GDex Batu Caves --> Cyberjaya
+Total Distance: 65.50 km
+Sentiment Ranking based on percentage of positive words: 3 place
+Positive Word Count: 388
+Negative Word Count: 168
+Positive Percentage: 69.78%
 
 Courier Company: J&T Kajang
-Overall Ranking: 2 place
+Overall Ranking: 3 place
 Distance Ranking based on shortest route: 2 place
 Route: Ampang --> J&T Kajang --> Cyberjaya
 Total Distance: 60.20 km
@@ -28,7 +38,7 @@ Negative Word Count: 194
 Positive Percentage: 64.27%
 
 Courier Company: City-Link Express Klang
-Overall Ranking: 2 place
+Overall Ranking: 3 place
 Distance Ranking based on shortest route: 4 place
 Route: Ampang --> City-Link Express Klang --> Cyberjaya
 Total Distance: 83.30 km
@@ -37,23 +47,13 @@ Positive Word Count: 205
 Negative Word Count: 81
 Positive Percentage: 71.68%
 
-Courier Company: GDex Batu Caves
-Overall Ranking: 4 place
-Distance Ranking based on shortest route: 3 place
-Route: Ampang --> GDex Batu Caves --> Cyberjaya
-Total Distance: 65.50 km
-Sentiment Ranking based on percentage of positive words: 4 place
-Positive Word Count: 403
-Negative Word Count: 181
-Positive Percentage: 69.01%
-
 Courier Company: DHL Sungai Buloh
 Overall Ranking: 5 place
 Distance Ranking based on shortest route: 5 place
 Route: Ampang --> DHL Sungai Buloh --> Cyberjaya
 Total Distance: 88.20 km
-Sentiment Ranking based on percentage of positive words: 3 place
-Positive Word Count: 507
-Negative Word Count: 221
-Positive Percentage: 69.64%
+Sentiment Ranking based on percentage of positive words: 4 place
+Positive Word Count: 505
+Negative Word Count: 220
+Positive Percentage: 69.66%
 

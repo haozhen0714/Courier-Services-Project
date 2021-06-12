@@ -14,17 +14,17 @@ def simple_dtw(x, y):
     a, b = len(x), len(y)
     # initialize a matrix with size of series x and y to infinity
     # +1 for later calculation purpose
-    dtw_matrix = np.zeros((a+1, b+1))
-    for i in range(a+1):  # O(a+1), a = length of series x
-        for j in range(b+1):  # O(b+1), b = length of series y
+    dtw_matrix = np.zeros((a + 1, b + 1))
+    for i in range(a + 1):  # O(a+1), a = length of series x
+        for j in range(b + 1):  # O(b+1), b = length of series y
             dtw_matrix[i, j] = np.inf
 
     # initilize the first element of matrix [0, 0] to 0
     dtw_matrix[0, 0] = 0
 
     # compute distance matrix
-    for i in range(1, a+1):  # O(a), a = length of series x
-        for j in range(1, b+1):  # O(b), b = length of series y
+    for i in range(1, a + 1):  # O(a), a = length of series x
+        for j in range(1, b + 1):  # O(b), b = length of series y
             cost = abs(x[i - 1] - y[j - 1])
             # take minimum values among three values,top right,left and bottom
             last_min = np.min([dtw_matrix[i - 1, j], dtw_matrix[i, j - 1], dtw_matrix[i - 1, j - 1]])
@@ -100,7 +100,7 @@ def get_window_size(mfcc_value, mfcc_test_value):
     window_size_value = 0
     for i in range(len(mfcc_value)):  # O(f), f = length of mfcc
         window_size_value += mfcc_value[i].shape[1]
-    window_size_value = int(window_size_value/len(mfcc_value))
+    window_size_value = int(window_size_value / len(mfcc_value))
     # find the size of distance window
     dists_value = np.zeros(mfcc_test_value.shape[1] - window_size_value)
     return window_size_value, dists_value
@@ -115,7 +115,8 @@ def get_distances(name, window_size_value, dists_value, mfcc_test_value, mfcc_va
         # compute distances between mfccTest and mfcc train using fastdtw and the average distance
         for j in range(len(mfcc_value)):  # O(f), f = length of mfcc
             # fastdtw has time complexity of O(w)
-            dists_value[i] += fastdtw(mfcc_value[j].T, mfcci.T, dist=lambda x, y: np.exp(np.linalg.norm(x - y, ord=1)))[0]
+            dists_value[i] += fastdtw(mfcc_value[j].T, mfcci.T, dist=lambda x, y: np.exp(np.linalg.norm(x - y, ord=1)))[
+                0]
         dists_value[i] /= len(mfcc_value)
     plt.plot(dists_value)
     plt.savefig('P4/Plotting of ' + name + ' distance.jpg')

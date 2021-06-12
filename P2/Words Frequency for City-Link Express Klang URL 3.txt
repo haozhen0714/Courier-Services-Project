@@ -1,6 +1,6 @@
 Stop Words List:
-['all', 'in', 'its', 'with', 'and', 'its', 'with', 'its', 'with', 'and', 'and', 'its', 'with', 'its', 'with', 'its', 'with', 'its', 'with', 'all', 'in', 'its', 'with', 'this', 'is', 'to', 'their', 'only', 'and', 'from', 'to', 'from', 'to', 'with', 'if', 'there', 'are', 'no', 'they', 'are', 'or', 'for', 'this', 'its', 'with', 'its', 'with', 'was', 'at', 'the', 'up', 'in', 'to', 'the', 'of', 'to', 'the', 'of', 'of', 'in', 'with', 'the', 'has', 'been', 'of', 'as', 'in', 'the', 'and', 'between', 'both', 'its', 'was', 'in', 'the', 'further', 'and', 'at', 'the', 'same', 'in', 'its', 'were', 'to', 'at', 'the', 'which', 'of', 'in', 'before', 'being', 'and', 'out', 'to', 'all', 'his', 'of', 'the', 'to', 'his', 'to', 'for', 'their', 'to', 'as', 'their', 'for', 'their', 'that', 'this', 'further', 'the', 'of', 'a', 'and', 'an', 'to', 'in', 'was', 'in', 'on', 'and', 'was', 'for', 'at', 'their', 'and', 'in', 'the', 'was', 'to', 'are', 'with', 'and', 'of', 'the', 'by', 'as', 'as', 'the', 'of', 'and', 'all', 'if', 'on', 'its', 'with', 'and', 'an', 'in', 'with', 'by', 'is', 'with', 'is', 'with', 'is', 'with', 'in', 'in', 'in', 'a', 'my', 'and', 'in', 'this', 'for', 'the', 'i', 'is', 'not', 'at', 'this', 'to', 'the', 'and', 'is', 'the', 'of', 'is', 'all']
-Total word counts for stopwords: 181
+['all', 'in', 'its', 'with', 'and', 'its', 'with', 'its', 'with', 'and', 'and', 'its', 'with', 'its', 'with', 'its', 'with', 'its', 'with', 'all', 'in', 'its', 'with', 'this', 'is', 'to', 'their', 'only', 'and', 'from', 'to', 'from', 'to', 'with', 'if', 'its', 'with', 'its', 'with', 'was', 'at', 'the', 'up', 'in', 'to', 'the', 'of', 'to', 'the', 'of', 'of', 'in', 'with', 'the', 'has', 'been', 'of', 'as', 'in', 'the', 'and', 'between', 'both', 'its', 'was', 'in', 'the', 'further', 'and', 'at', 'the', 'same', 'in', 'its', 'were', 'to', 'at', 'the', 'which', 'of', 'in', 'before', 'being', 'and', 'out', 'to', 'all', 'his', 'of', 'the', 'to', 'his', 'to', 'for', 'their', 'to', 'as', 'their', 'for', 'their', 'that', 'this', 'further', 'the', 'of', 'a', 'and', 'an', 'to', 'in', 'was', 'in', 'on', 'and', 'was', 'for', 'at', 'their', 'and', 'in', 'the', 'was', 'to', 'are', 'with', 'and', 'of', 'the', 'by', 'as', 'as', 'the', 'of', 'and', 'all', 'if', 'on', 'its', 'with', 'and', 'an', 'in', 'with', 'by', 'is', 'with', 'is', 'with', 'is', 'with', 'in', 'in', 'in', 'a', 'my', 'and', 'in', 'this', 'for', 'the', 'i', 'is', 'not', 'at', 'this', 'to', 'the', 'and', 'is', 'the', 'of', 'is', 'all']
+Total word counts for stopwords: 173
 
 Words count/frequency for the text in the article:
 [(13, 'the')
@@ -89,6 +89,7 @@ Words count/frequency for the text in the article:
 , (2, 'Aftermarket')
 , (2, '90')
 , (2, '2019')
+, (2, '1')
 , (2, '')
 , (1, 'which')
 , (1, 'wheeler')
@@ -311,14 +312,12 @@ Words count/frequency for the text in the article:
 , (1, 'Atsunori')
 , (1, 'Articles')
 , (1, 'Also')
-, (1, '429')
+, (1, '447')
 , (1, '4')
-, (1, '357')
+, (1, '375')
 , (1, '2E')
 , (1, '27')
-, (1, '22')
 , (1, '2018')
 , (1, '2011')
 , (1, '2')
-, (1, '1')
 ]
