@@ -64,7 +64,7 @@ def display_simple_dtw():
     path_yy = [y + 0.5 for y in path_y]
     ax.plot(path_xx, path_yy, color='blue', linewidth=3, alpha=0.2)
     fig.savefig("P4/dtw_warping_path.png")
-    print("Draw warping path: dtw_warping_path.jpg")
+    print("Draw warping path: dtw_warping_path.png")
 
 
 # Time complexity: O(1)
