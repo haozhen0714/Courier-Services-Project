@@ -134,7 +134,7 @@ def get_desired_word_audio(dists_value, window_size_value, y_test, sr_test, name
     # save in .wav file
     word = y_test[int(word_samp_bounds[0]): int(word_samp_bounds[1])]
     audio = IPython.display.Audio(data=word, rate=sr_test)
-    with open('P4/Audio/Output/' + name + '.wav', 'wb') as f:
+    with open('P4/Audio/' + name + '.wav', 'wb') as f:
         f.write(audio.data)
 
 
@@ -165,11 +165,11 @@ def speech_recognition():
     file_test = "harian_metro_jnt_ekspres"
     file_word_1 = "astro_kurier_jnt_ekspres"
     file_word_2 = "insight_kurier_jnt_ekspres"
-    file_desired_word = "P4 kurier_jnt_ekspres"
+    file_desired_word = "Output - P4 kurier_jnt_ekspres"
     speech_recognition_method(file_test, file_word_1, file_word_2, file_desired_word)  # O(efw)
     print("Identify 'isu dalaman' word")
     file_test = "harian_metro_isu"
     file_word_1 = "insight_isu_dalaman"
     file_word_2 = "tv3_isu_dalaman"
-    file_desired_word = "P4 isu_dalaman"
+    file_desired_word = "Output - P4 isu_dalaman"
     speech_recognition_method(file_test, file_word_1, file_word_2, file_desired_word)

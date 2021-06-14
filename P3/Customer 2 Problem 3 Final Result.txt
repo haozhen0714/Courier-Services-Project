@@ -13,9 +13,9 @@ Distance Ranking based on shortest route: 1 place
 Route: Subang Jaya --> City-Link Express Klang --> Puncak Alam
 Total Distance: 45.70 km
 Sentiment Ranking based on percentage of positive words: 2 place
-Positive Word Count: 205
+Positive Word Count: 202
 Negative Word Count: 81
-Positive Percentage: 71.68%
+Positive Percentage: 71.38%
 
 Courier Company: Pos Laju Petaling Jaya
 Overall Ranking: 2 place
@@ -23,9 +23,9 @@ Distance Ranking based on shortest route: 3 place
 Route: Subang Jaya --> Pos Laju Petaling Jaya --> Puncak Alam
 Total Distance: 56.10 km
 Sentiment Ranking based on percentage of positive words: 1 place
-Positive Word Count: 818
-Negative Word Count: 322
-Positive Percentage: 71.75%
+Positive Word Count: 833
+Negative Word Count: 327
+Positive Percentage: 71.81%
 
 Courier Company: DHL Sungai Buloh
 Overall Ranking: 3 place
@@ -33,9 +33,9 @@ Distance Ranking based on shortest route: 2 place
 Route: Subang Jaya --> DHL Sungai Buloh --> Puncak Alam
 Total Distance: 47.70 km
 Sentiment Ranking based on percentage of positive words: 3 place
-Positive Word Count: 506
+Positive Word Count: 515
 Negative Word Count: 221
-Positive Percentage: 69.60%
+Positive Percentage: 69.97%
 
 Courier Company: GDex Batu Caves
 Overall Ranking: 4 place
@@ -43,9 +43,9 @@ Distance Ranking based on shortest route: 4 place
 Route: Subang Jaya --> GDex Batu Caves --> Puncak Alam
 Total Distance: 80.80 km
 Sentiment Ranking based on percentage of positive words: 4 place
-Positive Word Count: 385
-Negative Word Count: 172
-Positive Percentage: 69.12%
+Positive Word Count: 423
+Negative Word Count: 184
+Positive Percentage: 69.69%
 
 Courier Company: J&T Kajang
 Overall Ranking: 5 place
@@ -53,7 +53,7 @@ Distance Ranking based on shortest route: 5 place
 Route: Subang Jaya --> J&T Kajang --> Puncak Alam
 Total Distance: 107.60 km
 Sentiment Ranking based on percentage of positive words: 5 place
-Positive Word Count: 349
-Negative Word Count: 194
-Positive Percentage: 64.27%
+Positive Word Count: 334
+Negative Word Count: 198
+Positive Percentage: 62.78%
 

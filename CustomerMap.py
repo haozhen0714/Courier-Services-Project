@@ -1,8 +1,9 @@
 import requests
 import gmplot
 import polyline
+import GoogleAPIKey
 
-API_KEY = 'AIzaSyDKQY-dAMpv32uiWSREDRH83FZRcNUhSmw'
+API_KEY = GoogleAPIKey.API_KEY
 
 
 # Time complexity: O(1)
@@ -65,8 +66,10 @@ def plot_map(customer, company_list):
         # if company is the best company based on distance, plot route in yellow colour
         if company.name == first_rank_company:
             # call method to get the coordinates for the route
-            lat_origin_hub, long_origin_hub = get_route("ori", customer.ori_lat, customer.ori_long, company.latitude, company.longitude)
-            lat_hub_dest, long_hub_dest = get_route("des", customer.des_lat, customer.des_long, company.latitude, company.longitude)
+            lat_origin_hub, long_origin_hub = get_route("ori", customer.ori_lat, customer.ori_long, company.latitude,
+                                                        company.longitude)
+            lat_hub_dest, long_hub_dest = get_route("des", customer.des_lat, customer.des_long, company.latitude,
+                                                    company.longitude)
             gmap.scatter(lat_origin_hub, long_origin_hub, 'yellow', size=5, marker=False)
             gmap.plot(lat_origin_hub, long_origin_hub, 'yellow', edge_width=10)
             gmap.scatter(lat_hub_dest, long_hub_dest, 'yellow', size=5, marker=False)
@@ -74,8 +77,10 @@ def plot_map(customer, company_list):
 
         # if not, plot in blue colour
         else:
-            lat_origin_hub, long_origin_hub = get_route("ori", customer.ori_lat, customer.ori_long, company.latitude, company.longitude)
-            lat_hub_dest, long_hub_dest = get_route("des", customer.des_lat, customer.des_long, company.latitude, company.longitude)
+            lat_origin_hub, long_origin_hub = get_route("ori", customer.ori_lat, customer.ori_long, company.latitude,
+                                                        company.longitude)
+            lat_hub_dest, long_hub_dest = get_route("des", customer.des_lat, customer.des_long, company.latitude,
+                                                    company.longitude)
             gmap.scatter(lat_origin_hub, long_origin_hub, 'cornflowerblue', size=7, marker=False)
             gmap.plot(lat_origin_hub, long_origin_hub, 'cornflowerblue', edge_width=7)
             gmap.scatter(lat_hub_dest, long_hub_dest, 'cornflowerblue', size=7, marker=False)
@@ -84,5 +89,3 @@ def plot_map(customer, company_list):
     # draw the map for a customer with all routes to each company and save in .html file
     gmap.draw('P1/Map for ' + customer.customer_name + '.html')
     print('Draw and Write Map for ' + customer.customer_name + '.html')
-
-

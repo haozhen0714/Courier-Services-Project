@@ -1,6 +1,7 @@
 import requests
+import GoogleAPIKey
 
-API_KEY = 'AIzaSyDKQY-dAMpv32uiWSREDRH83FZRcNUhSmw'
+API_KEY = GoogleAPIKey.API_KEY
 
 
 def getGeoCoord(address: str):

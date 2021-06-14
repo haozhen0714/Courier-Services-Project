@@ -1,7 +1,8 @@
 # importing required libraries
 import requests
+import GoogleAPIKey
 
-API_KEY = 'AIzaSyDKQY-dAMpv32uiWSREDRH83FZRcNUhSmw'
+API_KEY = GoogleAPIKey.API_KEY
 
 
 def calc_distance_between_2_point(source: str, dest: str):
