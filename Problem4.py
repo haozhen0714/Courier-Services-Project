@@ -134,7 +134,7 @@ def get_desired_word_audio(dists_value, window_size_value, y_test, sr_test, name
     # save in .wav file
     word = y_test[int(word_samp_bounds[0]): int(word_samp_bounds[1])]
     audio = IPython.display.Audio(data=word, rate=sr_test)
-    with open('P4/Audio/' + name + '.wav', 'wb') as f:
+    with open('P4/Audio/Output/' + name + '.wav', 'wb') as f:
         f.write(audio.data)
 
 
