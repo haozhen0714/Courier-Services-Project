@@ -69,7 +69,7 @@ def display_simple_dtw():
 
 # Time complexity: O(1)
 def load_wav(name):
-    # load .wav audio file to get y: audio time series, and sr: sampling rate of y
+    # load .wav audio file and get y: audio time series, and sr: sampling rate of y
     y_value, sr_value = librosa.load('P4/Audio/' + name + '.wav')
     return y_value, sr_value
 
@@ -83,57 +83,58 @@ def display_waveform(name, y_value, sr_value):
 
 
 # Time complexity: O(c)
-def convert_and_preprocess_mfcc(y_value, sr_value):
+def convert_to_mfcc(y_value, sr_value):
     # convert data to Mel-frequency cepstral coefficients (MFCCs)
     mfcc_value = librosa.feature.mfcc(y_value, sr_value)
-    # remove mean and normalize each column of MFCC
-    mfcc_cp = copy.deepcopy(mfcc_value)
+    # remove mean and normalize each column of MFCC to make mfcc has normal distribution
+    mfcc_copy = copy.deepcopy(mfcc_value)
     for i in range(mfcc_value.shape[1]):  # O(c), c = no of column of mfcc
-        mfcc_cp[:, i] = mfcc_value[:, i] - np.mean(mfcc_value[:, i])
-        mfcc_cp[:, i] = mfcc_cp[:, i] / np.max(np.abs(mfcc_cp[:, i]))
-    return mfcc_cp
+        mfcc_copy[:, i] = mfcc_value[:, i] - np.mean(mfcc_value[:, i])
+        mfcc_copy[:, i] = mfcc_copy[:, i] / np.max(np.abs(mfcc_copy[:, i]))
+    return mfcc_copy
 
 
 # Time complexity: O(f)
 def get_window_size(mfcc_value, mfcc_test_value):
-    # compute the average window size of training
+    # compute the average window size of sample audio
     window_size_value = 0
     for i in range(len(mfcc_value)):  # O(f), f = length of mfcc
         window_size_value += mfcc_value[i].shape[1]
     window_size_value = int(window_size_value / len(mfcc_value))
-    # find the size of distance window
-    dists_value = np.zeros(mfcc_test_value.shape[1] - window_size_value)
-    return window_size_value, dists_value
+    # find the size to store distances
+    dist_value = np.zeros(mfcc_test_value.shape[1] - window_size_value)
+    return window_size_value, dist_value
 
 
 # Time complexity: O(efw)
-def get_distances(name, window_size_value, dists_value, mfcc_test_value, mfcc_value):
+def get_distances(name, window_size_value, dist_value, mfcc_test_value, mfcc_value):
     # for each ith window,
-    for i in range(len(dists_value)):  # O(e), e = length of distance values
-        # get the mfccTest with window size = average window size of training
-        mfcci = mfcc_test_value[:, i:i + window_size_value]
-        # compute distances between mfccTest and mfcc train using fastdtw and the average distance
+    for i in range(len(dist_value)):  # O(e), e = length of distances array
+        # get the mfcc of test audio with window size = average window size of sample audios
+        mfcc_temp = mfcc_test_value[:, i:i + window_size_value]
+        # compute distances between mfcc_temp and mfcc sample audio using fastdtw and the average distance
         for j in range(len(mfcc_value)):  # O(f), f = length of mfcc
             # fastdtw has time complexity of O(w)
-            dists_value[i] += fastdtw(mfcc_value[j].T, mfcci.T, dist=lambda x, y: np.exp(np.linalg.norm(x - y, ord=1)))[
-                0]
-        dists_value[i] /= len(mfcc_value)
-    plt.plot(dists_value)
+            dist_value[i] += fastdtw(mfcc_value[j].T, mfcc_temp.T, dist=lambda x, y: np.exp(np.linalg.norm(x - y, ord=1)))[0]
+        dist_value[i] /= len(mfcc_value)
+    plt.plot(dist_value)
     plt.savefig('P4/Plotting of ' + name + ' distance.jpg')
 
 
 # Time complexity: O(1)
-def get_desired_word_audio(dists_value, window_size_value, y_test, sr_test, name):
-    # get the window with minimum distance (the window with desired word)
-    word_match_idx = dists_value.argmin()
-    # get the starting and ending index of the window of desired word
-    word_match_idx_bnds = np.array([word_match_idx, np.ceil(word_match_idx + window_size_value)])
+def get_search_word_audio(dist_value, window_size_value, y_test, sr_test, name):
+    # get the window with minimum distance (the window with search word)
+    search_word_idx = dist_value.argmin()
+    # get the starting and ending index of the window of search word
+    search_word_match_window = np.array([search_word_idx, np.ceil(search_word_idx + window_size_value)])
+    # length of sample for each matching
     samples_per_mfcc = 512
-    word_samp_bounds = 1 + (word_match_idx_bnds * samples_per_mfcc)
-    # get the boundaries of desired word from test audio series
+    # get boundaries for sample
+    search_word_samp_bounds = 1 + (search_word_match_window * samples_per_mfcc)
+    # get the boundaries of search word from test audio
     # save in .wav file
-    word = y_test[int(word_samp_bounds[0]): int(word_samp_bounds[1])]
-    audio = IPython.display.Audio(data=word, rate=sr_test)
+    search_word = y_test[int(search_word_samp_bounds[0]): int(search_word_samp_bounds[1])]
+    audio = IPython.display.Audio(data=search_word, rate=sr_test)
     with open('P4/Audio/' + name + '.wav', 'wb') as f:
         f.write(audio.data)
 
@@ -146,13 +147,13 @@ def speech_recognition_method(file_test, file_word_1, file_word_2, file_desired_
     display_waveform(file_test, y_test, sr_test)  # O(1)
     display_waveform(file_word_1, y1, sr1)
     display_waveform(file_word_2, y2, sr2)
-    mfcc_test = convert_and_preprocess_mfcc(y_test, sr_test)  # O(c)
-    mfcc1 = convert_and_preprocess_mfcc(y1, sr1)
-    mfcc2 = convert_and_preprocess_mfcc(y2, sr2)
+    mfcc_test = convert_to_mfcc(y_test, sr_test)  # O(c)
+    mfcc1 = convert_to_mfcc(y1, sr1)
+    mfcc2 = convert_to_mfcc(y2, sr2)
     mfcc = [mfcc1, mfcc2]
-    window_size, dists = get_window_size(mfcc, mfcc_test)  # O(f)
-    get_distances(file_desired_word, window_size, dists, mfcc_test, mfcc)  # O(efw)
-    get_desired_word_audio(dists, window_size, y_test, sr_test, file_desired_word)  # O(1)
+    window_size, dist = get_window_size(mfcc, mfcc_test)  # O(f)
+    get_distances(file_desired_word, window_size, dist, mfcc_test, mfcc)  # O(efw)
+    get_search_word_audio(dist, window_size, y_test, sr_test, file_desired_word)  # O(1)
     y, sr = load_wav(file_desired_word)
     display_waveform(file_desired_word, y, sr)
     print("Done identifying. Audio name:  " + file_desired_word)
