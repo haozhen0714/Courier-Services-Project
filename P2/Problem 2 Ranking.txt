@@ -1,8 +1,8 @@
 0
 Pos Laju Petaling Jaya
-Positive Word Count: 833
-Negative Word Count: 327
-Positive Percentage: 71.81%
+Positive Word Count: 828
+Negative Word Count: 318
+Positive Percentage: 72.25%
 
 1
 City-Link Express Klang
@@ -12,15 +12,15 @@ Positive Percentage: 71.38%
 
 2
 DHL Sungai Buloh
-Positive Word Count: 515
-Negative Word Count: 221
-Positive Percentage: 69.97%
+Positive Word Count: 511
+Negative Word Count: 215
+Positive Percentage: 70.39%
 
 3
 GDex Batu Caves
-Positive Word Count: 423
-Negative Word Count: 184
-Positive Percentage: 69.69%
+Positive Word Count: 417
+Negative Word Count: 177
+Positive Percentage: 70.20%
 
 4
 J&T Kajang

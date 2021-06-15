@@ -13,9 +13,9 @@ Distance Ranking based on shortest route: 1 place
 Route: Ampang --> Pos Laju Petaling Jaya --> Cyberjaya
 Total Distance: 56.30 km
 Sentiment Ranking based on percentage of positive words: 1 place
-Positive Word Count: 833
-Negative Word Count: 327
-Positive Percentage: 71.81%
+Positive Word Count: 828
+Negative Word Count: 318
+Positive Percentage: 72.25%
 
 Courier Company: J&T Kajang
 Overall Ranking: 2 place
@@ -43,9 +43,9 @@ Distance Ranking based on shortest route: 3 place
 Route: Ampang --> GDex Batu Caves --> Cyberjaya
 Total Distance: 65.50 km
 Sentiment Ranking based on percentage of positive words: 4 place
-Positive Word Count: 423
-Negative Word Count: 184
-Positive Percentage: 69.69%
+Positive Word Count: 417
+Negative Word Count: 177
+Positive Percentage: 70.20%
 
 Courier Company: DHL Sungai Buloh
 Overall Ranking: 5 place
@@ -53,7 +53,7 @@ Distance Ranking based on shortest route: 5 place
 Route: Ampang --> DHL Sungai Buloh --> Cyberjaya
 Total Distance: 88.20 km
 Sentiment Ranking based on percentage of positive words: 3 place
-Positive Word Count: 515
-Negative Word Count: 221
-Positive Percentage: 69.97%
+Positive Word Count: 511
+Negative Word Count: 215
+Positive Percentage: 70.39%
 
