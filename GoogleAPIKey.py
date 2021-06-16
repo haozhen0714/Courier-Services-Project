@@ -1,4 +1,4 @@
-API_KEY = 'YOUR_API_KEY'
+API_KEY = 'AIzaSyDKQY-dAMpv32uiWSREDRH83FZRcNUhSmw'
 
 
 def get_google_api_key():

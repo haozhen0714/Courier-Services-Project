@@ -16,7 +16,7 @@ customer_list = p1.read_customer_full_details()
 
 p1.generate_file_for_customer_with_each_company(customer_list,
                                                 company_list)  # generate score for problem 1 and save it in file
-
+'''
 # added for naim code
 CompanyMap.draw_company_map(company_list)
 
@@ -51,5 +51,5 @@ p4.display_simple_dtw()
 # Time complexity: O(x)
 # due to multilevel approach
 p4.speech_recognition()
-
+'''
 print("\nExecution time: %.2f seconds" % (time.time() - initial_time))
