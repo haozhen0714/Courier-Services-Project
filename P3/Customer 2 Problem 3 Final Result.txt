@@ -1,8 +1,8 @@
 Probability Distribution of each Courier Company for Customer 2:
 City-Link Express Klang: 0.3067
 Pos Laju Petaling Jaya: 0.2533
-DHL Sungai Buloh: 0.2133
-GDex Batu Caves: 0.1600
+DHL Sungai Buloh: 0.2400
+GDex Batu Caves: 0.1333
 J&T Kajang: 0.0667
 ----------------------------------------------------------------------------------------
 Conclusion for each company. "1" place is the best ranking representation and so on...
@@ -23,29 +23,29 @@ Distance Ranking based on shortest route: 3 place
 Route: Subang Jaya --> Pos Laju Petaling Jaya --> Puncak Alam
 Total Distance: 56.10 km
 Sentiment Ranking based on percentage of positive words: 1 place
-Positive Word Count: 825
-Negative Word Count: 320
-Positive Percentage: 72.05%
+Positive Word Count: 827
+Negative Word Count: 325
+Positive Percentage: 71.79%
 
 Courier Company: DHL Sungai Buloh
 Overall Ranking: 3 place
 Distance Ranking based on shortest route: 2 place
 Route: Subang Jaya --> DHL Sungai Buloh --> Puncak Alam
 Total Distance: 47.70 km
-Sentiment Ranking based on percentage of positive words: 4 place
-Positive Word Count: 494
-Negative Word Count: 205
-Positive Percentage: 70.67%
+Sentiment Ranking based on percentage of positive words: 3 place
+Positive Word Count: 522
+Negative Word Count: 220
+Positive Percentage: 70.35%
 
 Courier Company: GDex Batu Caves
 Overall Ranking: 4 place
 Distance Ranking based on shortest route: 4 place
 Route: Subang Jaya --> GDex Batu Caves --> Puncak Alam
 Total Distance: 80.80 km
-Sentiment Ranking based on percentage of positive words: 3 place
-Positive Word Count: 439
-Negative Word Count: 182
-Positive Percentage: 70.69%
+Sentiment Ranking based on percentage of positive words: 4 place
+Positive Word Count: 420
+Negative Word Count: 178
+Positive Percentage: 70.23%
 
 Courier Company: J&T Kajang
 Overall Ranking: 5 place
@@ -53,7 +53,7 @@ Distance Ranking based on shortest route: 5 place
 Route: Subang Jaya --> J&T Kajang --> Puncak Alam
 Total Distance: 107.60 km
 Sentiment Ranking based on percentage of positive words: 5 place
-Positive Word Count: 346
-Negative Word Count: 196
-Positive Percentage: 63.84%
+Positive Word Count: 338
+Negative Word Count: 194
+Positive Percentage: 63.53%
 
