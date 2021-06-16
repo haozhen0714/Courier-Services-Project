@@ -44,8 +44,12 @@ def calculate_and_write_company_location_coordinate(company_lists):  # O(n): n c
     for company in company_lists:  # O(n)
         print("Call Geocoding API for address:", company.address, "to get real latitude and longitude")
         location = GeocodingAPI.getGeoCoord(company.address)
-        company.latitude = location[0]
-        company.longitude = location[1]
+        try:
+            company.latitude = location[0]
+            company.longitude = location[1]
+        except TypeError:
+            print("Please Provide API KEY in GoogleAPIKey.py")
+            exit(0)
     company_file = open("P1/Company_Full_Details.txt", "w")
     print("Write Company_Full_Details.txt")
     for company in company_lists:  # O(n)
