@@ -50,7 +50,7 @@ def get_route(name, customer_lat, customer_long, company_lat, company_long):  # 
 # Time complexity = O(nsd)
 def plot_map(customer, company_list):
     gmap = gmplot.GoogleMapPlotter(3.112585695236, 101.6397000538541, 10)
-    gmap.apikey = "AIzaSyDKQY-dAMpv32uiWSREDRH83FZRcNUhSmw"
+    gmap.apikey = API_KEY
 
     # the best company based on distance
     first_rank_company = read_ranking(customer)
